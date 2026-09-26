@@ -1,0 +1,15 @@
+{
+  "_hinweis": "Diese Datei ist die Ground Truth deiner Auswertung und muss von dir manuell befüllt werden. Trage hier die Schwachstellen ein, die im Testobjekt NACHWEISLICH vorhanden sind - z. B. aus der offiziellen Challenge-Liste von OWASP Juice Shop, aus bekannten CVEs der verwendeten Paketversionen, oder aus einer eigenen manuellen Code-Review vorab. 'identifier' muss exakt dem Wert entsprechen, den das jeweilige Tool ausgibt (CVE-ID bei npm audit/Trivy, Rule-ID bei Semgrep), damit der Abgleich im Skript funktioniert.",
+  "known_vulnerabilities": [
+    {
+      "identifier": "CVE-XXXX-XXXXX",
+      "description": "Beispiel: bekannte Schwachstelle in einer veralteten Abhängigkeit",
+      "source": "z.B. GitHub Advisory Database"
+    },
+    {
+      "identifier": "javascript.express.security.audit.xss.direct-response-write",
+      "description": "Beispiel: Semgrep-Regel für eine absichtlich eingebaute XSS-Lücke",
+      "source": "manuelle Code-Review / Juice Shop Challenge-Liste"
+    }
+  ]
+}
