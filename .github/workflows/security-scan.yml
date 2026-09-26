@@ -6,7 +6,7 @@ on:
       target_repo:
         description: "Git-URL des Testobjekts (z. B. OWASP Juice Shop)"
         required: true
-        default: "https://github.com/juice-shop/juice-shop.git"
+        default: "juice-shop/juice-shop"
   push:
     branches: [main]
 
