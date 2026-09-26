@@ -108,8 +108,17 @@ def parse_npm_audit(data: dict) -> list[Finding]:
         via = info.get("via", [])
         for entry in via:
             if isinstance(entry, dict):
-                identifier = entry.get("url", entry.get("title", pkg_name))
-                description = entry.get("title", "")
+                url = entry.get("url", "")
+                title = entry.get("title", "")
+                # Nur die Advisory-ID (z. B. GHSA-xxxx) extrahieren, nicht die
+                # volle URL - sonst stimmt das Format nicht mit
+                # reference_vulnerabilities.json ueberein und es gibt nie
+                # einen Treffer (Bug in der Vorversion dieses Skripts).
+                if "advisories/" in url:
+                    identifier = url.rstrip("/").split("advisories/")[-1]
+                else:
+                    identifier = title or pkg_name
+                description = title
             else:
                 # "via" kann auch nur den Paketnamen als String enthalten
                 identifier = f"{pkg_name}:{entry}"
@@ -153,7 +162,7 @@ def load_reference(path: str) -> set[str]:
         {
           "known_vulnerabilities": [
             {"identifier": "CVE-2021-XXXXX", "description": "..."},
-            {"identifier": "javascript.express.security.audit...", "description": "..."}
+            {"identifier": "GHSA-xxxx-xxxx-xxxx", "description": "..."}
           ]
         }
     """
