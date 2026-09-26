@@ -50,7 +50,8 @@ jobs:
 
       - name: Zeitmessung stoppen (Semgrep)
         run: |
-          echo "SEMGREP_END=$(date +%s)" >> "$GITHUB_ENV"
+          SEMGREP_END=$(date +%s)
+          echo "SEMGREP_END=$SEMGREP_END" >> "$GITHUB_ENV"
           echo "SEMGREP_DURATION=$((SEMGREP_END - SEMGREP_START))" >> "$GITHUB_ENV"
 
       - name: Zeitmessung starten (npm audit)
@@ -68,7 +69,8 @@ jobs:
 
       - name: Zeitmessung stoppen (npm audit)
         run: |
-          echo "NPMAUDIT_END=$(date +%s)" >> "$GITHUB_ENV"
+          NPMAUDIT_END=$(date +%s)
+          echo "NPMAUDIT_END=$NPMAUDIT_END" >> "$GITHUB_ENV"
           echo "NPMAUDIT_DURATION=$((NPMAUDIT_END - NPMAUDIT_START))" >> "$GITHUB_ENV"
 
       - name: Zeitmessung starten (Trivy)
@@ -86,7 +88,8 @@ jobs:
 
       - name: Zeitmessung stoppen (Trivy)
         run: |
-          echo "TRIVY_END=$(date +%s)" >> "$GITHUB_ENV"
+          TRIVY_END=$(date +%s)
+          echo "TRIVY_END=$TRIVY_END" >> "$GITHUB_ENV"
           echo "TRIVY_DURATION=$((TRIVY_END - TRIVY_START))" >> "$GITHUB_ENV"
 
       - name: Laufzeiten sichern
