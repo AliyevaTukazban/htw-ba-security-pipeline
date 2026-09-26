@@ -1,15 +1,285 @@
 {
-  "_hinweis": "Diese Datei ist die Ground Truth deiner Auswertung und muss von dir manuell befüllt werden. Trage hier die Schwachstellen ein, die im Testobjekt NACHWEISLICH vorhanden sind - z. B. aus der offiziellen Challenge-Liste von OWASP Juice Shop, aus bekannten CVEs der verwendeten Paketversionen, oder aus einer eigenen manuellen Code-Review vorab. 'identifier' muss exakt dem Wert entsprechen, den das jeweilige Tool ausgibt (CVE-ID bei npm audit/Trivy, Rule-ID bei Semgrep), damit der Abgleich im Skript funktioniert.",
+  "_hinweis": "Ground Truth: HIGH/CRITICAL Schwachstellen in den Abhaengigkeiten von OWASP Juice Shop, dokumentiert in der GitHub Advisory Database, erhoben ueber npm audit am 26.09.2026. Umfasst nur Dependency-Schwachstellen (SCA) - Semgrep (SAST) prueft eine andere Kategorie (Code-Muster statt bekannte CVEs) und wird daher separat/qualitativ diskutiert, siehe Limitationen.",
   "known_vulnerabilities": [
     {
-      "identifier": "CVE-XXXX-XXXXX",
-      "description": "Beispiel: bekannte Schwachstelle in einer veralteten Abhängigkeit",
-      "source": "z.B. GitHub Advisory Database"
+      "identifier": "GHSA-v75r-vx73-82pj",
+      "description": "@cyclonedx/cyclonedx-npm: Shell Injection via Unsanitized --workspace Argument (Paket: @cyclonedx/cyclonedx-npm, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
     },
     {
-      "identifier": "javascript.express.security.audit.xss.direct-response-write",
-      "description": "Beispiel: Semgrep-Regel für eine absichtlich eingebaute XSS-Lücke",
-      "source": "manuelle Code-Review / Juice Shop Challenge-Liste"
+      "identifier": "GHSA-q69g-4hcv-6jg4",
+      "description": "@cyclonedx/cyclonedx-npm: Shell Injection via Unsanitized --workspace Argument on Windows (Paket: @cyclonedx/cyclonedx-npm, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-xwcq-pm8m-c4vf",
+      "description": "crypto-js PBKDF2 1,000 times weaker than specified in 1993 and 1.3M times weaker than current standard (Paket: crypto-js, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-rg76-677x-56q9",
+      "description": "crypto-js: Insufficient Entropy in Cryptographic Secret Generation via Vulnerable CryptoJS Dependency Chain (Paket: crypto-js, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-mp2f-45pm-3cg9",
+      "description": "Decompress: Archive extraction can create files and links outside of the target directory (Paket: decompress, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-h39j-r5qq-r9mm",
+      "description": "decompress: Arbitrary File Write via Archive Extraction (Zip Slip) (Paket: decompress, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-jwp9-9v96-94mx",
+      "description": "decompress allows arbitrary hardlink creation during archive extraction (Paket: decompress, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-r7qp-cfhv-p84w",
+      "description": "Uncaught exception in engine.io (Paket: engine.io, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-r635-g3xr-vw7x",
+      "description": "Socket.IO: Engine.IO Polling Transport Connection Exhaustion (Paket: engine.io, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-6g6m-m6h5-w9gf",
+      "description": "Authorization bypass in express-jwt (Paket: express-jwt, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-pfrx-2q88-qq97",
+      "description": "Got allows a redirect to a UNIX socket (Paket: got, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-rc47-6667-2j5j",
+      "description": "http-cache-semantics vulnerable to Regular Expression Denial of Service (Paket: http-cache-semantics, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-c7hr-j4mj-j2w6",
+      "description": "Verification Bypass in jsonwebtoken (Paket: jsonwebtoken, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-8cf7-32gw-wr33",
+      "description": "jsonwebtoken unrestricted key type could lead to legacy keys usage  (Paket: jsonwebtoken, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-hjrf-2m68-5959",
+      "description": "jsonwebtoken's insecure implementation of key retrieval function could lead to Forgeable Public/Private Tokens from RSA to HMAC (Paket: jsonwebtoken, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-qwph-4952-7xr6",
+      "description": "jsonwebtoken vulnerable to signature validation bypass due to insecure default algorithm in jwt.verify() (Paket: jsonwebtoken, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-gjcw-v447-2w7q",
+      "description": "Forgeable Public/Private Tokens in jws (Paket: jws, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-869p-cjfg-cm3x",
+      "description": "auth0/node-jws Improperly Verifies HMAC Signature (Paket: jws, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-78h3-pg4x-j8cv",
+      "description": "libxmljs2 vulnerable to type confusion when parsing specially crafted XML (Paket: libxmljs2, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-fvqr-27wr-82fm",
+      "description": "Prototype Pollution in lodash (Paket: lodash, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-35jh-r3h4-6jhm",
+      "description": "Command Injection in lodash (Paket: lodash, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-4xc9-xhrj-v574",
+      "description": "Prototype Pollution in lodash (Paket: lodash, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-jf85-cpcp-j695",
+      "description": "Prototype Pollution in lodash (Paket: lodash, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-f23m-r3pf-42rh",
+      "description": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit` (Paket: lodash, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-5mrr-rgp6-x4gr",
+      "description": "Command Injection in marsdb (Paket: marsdb, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-3ppc-4f35-3m26",
+      "description": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern (Paket: minimatch, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-7r86-cg39-jmmj",
+      "description": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments (Paket: minimatch, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-23c5-xmqv-rm74",
+      "description": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions (Paket: minimatch, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-87vv-r9j6-g5qv",
+      "description": "Regular Expression Denial of Service in moment (Paket: moment, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-446m-mv8f-q348",
+      "description": "Regular Expression Denial of Service in moment (Paket: moment, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-8hfj-j24r-96c4",
+      "description": "Path Traversal: 'dir/../../filename' in moment.locale (Paket: moment, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-mjxr-4v3x-q3m4",
+      "description": "Improper Input Validation in sanitize-html (Paket: sanitize-html, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-3j7m-hmh3-9jmp",
+      "description": "Cross-Site Scripting in sanitize-html (Paket: sanitize-html, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-rjqq-98f6-6j3r",
+      "description": "Improper Input Validation in sanitize-html (Paket: sanitize-html, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-xc6g-ggrc-qq4r",
+      "description": "Cross-Site Scripting in sanitize-html (Paket: sanitize-html, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-cgfm-xwp7-2cvr",
+      "description": "Sanitize-html Vulnerable To REDoS Attacks (Paket: sanitize-html, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-qhxp-v273-g94h",
+      "description": "sanitize-html is vulnerable to XSS through incomprehensive sanitization (Paket: sanitize-html, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-rm97-x556-q36h",
+      "description": "sanitize-html Information Exposure vulnerability (Paket: sanitize-html, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-jxwj-j7wr-gfrw",
+      "description": "ApostropheCMS: Mutation-XSS / allowedTags bypass via literal `</textarea/>` solidus close (Paket: sanitize-html, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-cqmj-92xf-r6r9",
+      "description": "Insufficient validation when decoding a Socket.IO packet (Paket: socket.io-parser, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-677m-j7p3-52f9",
+      "description": "socket.io allows an unbounded number of binary attachments (Paket: socket.io-parser, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-2m8v-j782-fhvr",
+      "description": "Socket.IO: Zero-attachment Memory Exhaustion (Paket: socket.io-parser, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-34x7-hfp2-rc4v",
+      "description": "node-tar Vulnerable to Arbitrary File Creation/Overwrite via Hardlink Path Traversal (Paket: tar, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-8qq5-rm4j-mr97",
+      "description": "node-tar is Vulnerable to Arbitrary File Overwrite and Symlink Poisoning via Insufficient Path Sanitization (Paket: tar, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-83g3-92jg-28cx",
+      "description": "Arbitrary File Read/Write via Hardlink Target Escape Through Symlink Chain in node-tar Extraction (Paket: tar, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-qffp-2rhf-9h96",
+      "description": "tar has Hardlink Path Traversal via Drive-Relative Linkpath (Paket: tar, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-9ppj-qmqm-q256",
+      "description": "node-tar Symlink Path Traversal via Drive-Relative Linkpath (Paket: tar, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-r6q2-hw4h-h46w",
+      "description": "Race Condition in node-tar Path Reservations via Unicode Ligature Collisions on macOS APFS (Paket: tar, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-vmf3-w455-68vh",
+      "description": "node-tar applies PAX size override to intermediary GNU long-name/long-link headers, causing tar parser interpretation differential (file smuggling) (Paket: tar, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-w8wr-v893-vjvp",
+      "description": "node-tar: Process crash via PAX numeric path type confusion (Paket: tar, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-23hp-3jrh-7fpw",
+      "description": "node-tar: Decompression/parse DoS via unlimited input (Paket: tar, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-8x88-c5mf-7j5w",
+      "description": "node-tar: Negative tar entry size causes infinite loop in archive replace (Paket: tar, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-gvwx-54wh-qm9j",
+      "description": "node-tar: Uncaught Exception DoS via NUL byte in PAX path/linkpath records (Paket: tar, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-r292-9mhp-454m",
+      "description": "node-tar: Uncontrolled recursion in mapHas/filesFilter allows uncatchable stack-overflow DoS via crafted long-path tar with member selection (Paket: tar, Schweregrad: critical)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-3h5v-q93c-6h6q",
+      "description": "ws affected by a DoS when handling a request with many HTTP headers (Paket: ws, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
+    },
+    {
+      "identifier": "GHSA-96hv-2xvq-fx4p",
+      "description": "ws: Memory exhaustion DoS from tiny fragments and data chunks (Paket: ws, Schweregrad: high)",
+      "source": "GitHub Advisory Database, via npm audit"
     }
   ]
 }
