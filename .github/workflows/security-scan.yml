@@ -1,0 +1,128 @@
+name: Security Scan Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_repo:
+        description: "Git-URL des Testobjekts (z. B. OWASP Juice Shop)"
+        required: true
+        default: "https://github.com/juice-shop/juice-shop.git"
+  push:
+    branches: [main]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testobjekt auschecken
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.inputs.target_repo || 'juice-shop/juice-shop' }}
+          path: target
+          fetch-depth: 1
+
+      - name: Eigenes Repo auschecken (für Auswertungsskript)
+        uses: actions/checkout@v4
+        with:
+          path: pipeline
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Zeitmessung starten (Semgrep)
+        run: echo "SEMGREP_START=$(date +%s)" >> "$GITHUB_ENV"
+
+      - name: Semgrep installieren
+        run: pip install semgrep
+
+      - name: Semgrep-Scan (SAST)
+        working-directory: target
+        continue-on-error: true
+        run: |
+          semgrep scan --config auto --json --output ../reports/semgrep.json .
+
+      - name: Zeitmessung stoppen (Semgrep)
+        run: |
+          echo "SEMGREP_END=$(date +%s)" >> "$GITHUB_ENV"
+          echo "SEMGREP_DURATION=$((SEMGREP_END - SEMGREP_START))" >> "$GITHUB_ENV"
+
+      - name: Zeitmessung starten (npm audit)
+        run: echo "NPMAUDIT_START=$(date +%s)" >> "$GITHUB_ENV"
+
+      - name: Abhängigkeiten installieren
+        working-directory: target
+        continue-on-error: true
+        run: npm install --package-lock-only
+
+      - name: npm audit (Dependency Scan)
+        working-directory: target
+        continue-on-error: true
+        run: npm audit --json > ../reports/npm-audit.json
+
+      - name: Zeitmessung stoppen (npm audit)
+        run: |
+          echo "NPMAUDIT_END=$(date +%s)" >> "$GITHUB_ENV"
+          echo "NPMAUDIT_DURATION=$((NPMAUDIT_END - NPMAUDIT_START))" >> "$GITHUB_ENV"
+
+      - name: Zeitmessung starten (Trivy)
+        run: echo "TRIVY_START=$(date +%s)" >> "$GITHUB_ENV"
+
+      - name: Trivy installieren
+        run: |
+          curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh \
+            | sh -s -- -b /usr/local/bin
+
+      - name: Trivy-Scan (Filesystem/Dependencies)
+        continue-on-error: true
+        run: |
+          trivy fs --format json --output reports/trivy.json target
+
+      - name: Zeitmessung stoppen (Trivy)
+        run: |
+          echo "TRIVY_END=$(date +%s)" >> "$GITHUB_ENV"
+          echo "TRIVY_DURATION=$((TRIVY_END - TRIVY_START))" >> "$GITHUB_ENV"
+
+      - name: Laufzeiten sichern
+        run: |
+          cat <<EOF > reports/scan-timings.json
+          {
+            "semgrep_seconds": ${SEMGREP_DURATION:-0},
+            "npm_audit_seconds": ${NPMAUDIT_DURATION:-0},
+            "trivy_seconds": ${TRIVY_DURATION:-0}
+          }
+          EOF
+
+      - name: Reports als Artefakt hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-scan-reports
+          path: reports/
+
+      - name: Python-Abhängigkeiten installieren
+        run: pip install -r pipeline/scripts/requirements.txt
+
+      - name: Findings auswerten
+        run: |
+          python pipeline/scripts/analyze_findings.py \
+            --semgrep reports/semgrep.json \
+            --npm-audit reports/npm-audit.json \
+            --trivy reports/trivy.json \
+            --timings reports/scan-timings.json \
+            --reference pipeline/reference_vulnerabilities.json \
+            --output reports/auswertung.json \
+            --output-csv reports/auswertung.csv
+
+      - name: Auswertung als Artefakt hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: auswertung
+          path: |
+            reports/auswertung.json
+            reports/auswertung.csv
