@@ -1,0 +1,312 @@
+﻿datei;zeile;kennung;schweregrad;nachricht;werkzeug;teil;variante;id;zuordnung;ergebnis;paket;version;ghsa;nur_build
+routes/profileImageUrlUpload.ts;20;js/polynomial-redos;high;This [regular expression](1) that depends on [a user-provided value](2) may run slow on strings with many repetitions of 'a'.;codeql;backend;-;31f6ab9dc501;;FP;;;;
+lib/antiCheat.ts;78;js/clear-text-logging;high;"This logs sensitive data returned by [an access to changePasswordBenderChallenge](1) as clear text.
+This logs sensitive data returned by [an access to weakPasswordChallenge](2) as clear text.
+This logs sensitive data returned by [an access to dlpPasswordSprayingChallenge](3) as clear text.
+This logs";codeql;backend;-;8e4898c07015;;FP;;;;
+lib/antiCheat.ts;107;js/clear-text-logging;high;"This logs sensitive data returned by [an access to changePasswordBenderChallenge](1) as clear text.
+This logs sensitive data returned by [an access to weakPasswordChallenge](2) as clear text.
+This logs sensitive data returned by [an access to dlpPasswordSprayingChallenge](3) as clear text.
+This logs";codeql;backend;-;071a109103ee;;FP;;;;
+lib/antiCheat.ts;219;js/clear-text-logging;high;This logs sensitive data returned by [an access to leakedApiKeyChallenge](1) as clear text.;codeql;backend;-;fcefb2004636;;FP;;;;
+server.ts;271;js/missing-rate-limiting;high;This route handler performs [a file system access](1), but is not rate-limited.;codeql;backend;-;7683212087c6;;FP;;;;
+server.ts;291;js/missing-rate-limiting;high;This route handler performs [authorization](1), but is not rate-limited.;codeql;backend;-;06463a3036db;directoryListingChallenge;TP;;;;
+server.ts;292;js/missing-rate-limiting;high;This route handler performs [a file system access](1), but is not rate-limited.;codeql;backend;-;8a07a3a76ca2;directoryListingChallenge;TP;;;;
+server.ts;299;js/missing-rate-limiting;high;This route handler performs [a file system access](1), but is not rate-limited.;codeql;backend;-;6eb23544d698;;FP;;;;
+server.ts;304;js/missing-rate-limiting;high;This route handler performs [a file system access](1), but is not rate-limited.;codeql;backend;-;2725eb656131;accessLogDisclosureChallenge;TP;;;;
+server.ts;338;js/missing-rate-limiting;high;This route handler performs [a file system access](1), but is not rate-limited.;codeql;backend;-;aa743fc32d40;;FP;;;;
+server.ts;339;js/missing-rate-limiting;high;This route handler performs [a file system access](1), but is not rate-limited.;codeql;backend;-;1317ac1ffa59;;FP;;;;
+server.ts;459;js/missing-rate-limiting;high;This route handler performs [authorization](1), but is not rate-limited.;codeql;backend;-;430486a08594;;FP;;;;
+server.ts;491;js/missing-rate-limiting;high;This route handler performs [authorization](1), but is not rate-limited.;codeql;backend;-;d241f24fec52;;FP;;;;
+server.ts;624;js/missing-rate-limiting;high;This route handler performs [authorization](1), but is not rate-limited.;codeql;backend;-;55c1fdaab789;;FP;;;;
+server.ts;628;js/missing-rate-limiting;high;This route handler performs [authorization](1), but is not rate-limited.;codeql;backend;-;938a620f9d4d;;FP;;;;
+server.ts;645;js/missing-rate-limiting;high;This route handler performs [a database access](1), but is not rate-limited.;codeql;backend;-;d864562296ab;;FP;;;;
+server.ts;649;js/missing-rate-limiting;high;"This route handler performs [a database access](1), but is not rate-limited.
+This route handler performs [a database access](2), but is not rate-limited.";codeql;backend;-;f62c425a86b3;;FP;;;;
+server.ts;650;js/missing-rate-limiting;high;"This route handler performs [a file system access](1), but is not rate-limited.
+This route handler performs [a file system access](2), but is not rate-limited.
+This route handler performs [a file system access](3), but is not rate-limited.";codeql;backend;-;7bdbb69c084e;;FP;;;;
+server.ts;651;js/missing-rate-limiting;high;This route handler performs [a database access](1), but is not rate-limited.;codeql;backend;-;3878bc6efdc8;;FP;;;;
+server.ts;652;js/missing-rate-limiting;high;This route handler performs [authorization](1), but is not rate-limited.;codeql;backend;-;8991eb168d5a;;FP;;;;
+server.ts;653;js/missing-rate-limiting;high;This route handler performs [authorization](1), but is not rate-limited.;codeql;backend;-;89fcb353ab7e;;FP;;;;
+server.ts;657;js/missing-rate-limiting;high;This route handler performs [authorization](1), but is not rate-limited.;codeql;backend;-;59ee5824977d;;FP;;;;
+server.ts;660;js/missing-rate-limiting;high;This route handler performs [a database access](1), but is not rate-limited.;codeql;backend;-;0a1692b3296f;;FP;;;;
+server.ts;661;js/missing-rate-limiting;high;This route handler performs [a database access](1), but is not rate-limited.;codeql;backend;-;3fc4cab492bc;;FP;;;;
+server.ts;662;js/missing-rate-limiting;high;This route handler performs [a database access](1), but is not rate-limited.;codeql;backend;-;c0643067639f;;FP;;;;
+server.ts;663;js/missing-rate-limiting;high;"This route handler performs [a database access](1), but is not rate-limited.
+This route handler performs [a database access](2), but is not rate-limited.
+This route handler performs [a database access](3), but is not rate-limited.
+This route handler performs [a database access](4), but is not rate-l";codeql;backend;-;e77646f337af;;FP;;;;
+server.ts;679;js/missing-rate-limiting;high;This route handler performs [a file system access](1), but is not rate-limited.;codeql;backend;-;fd1185600871;;FP;;;;
+server.ts;680;js/missing-rate-limiting;high;This route handler performs [a file system access](1), but is not rate-limited.;codeql;backend;-;a936801dd948;;FP;;;;
+server.ts;681;js/missing-rate-limiting;high;This route handler performs [a file system access](1), but is not rate-limited.;codeql;backend;-;b29cdcc44b52;;FP;;;;
+server.ts;690;js/missing-rate-limiting;high;This route handler performs [a file system access](1), but is not rate-limited.;codeql;backend;-;8e765591a5da;;FP;;;;
+server.ts;691;js/missing-rate-limiting;high;"This route handler performs [a file system access](1), but is not rate-limited.
+This route handler performs [a file system access](2), but is not rate-limited.
+This route handler performs [a file system access](3), but is not rate-limited.
+This route handler performs [a file system access](4), but i";codeql;backend;-;e46b70f52750;;FP;;;;
+server.ts;694;js/missing-rate-limiting;high;This route handler performs [a file system access](1), but is not rate-limited.;codeql;backend;-;cb69873547de;;FP;;;;
+server.ts;695;js/missing-rate-limiting;high;This route handler performs [authorization](1), but is not rate-limited.;codeql;backend;-;0bc6ce92b1bc;;FP;;;;
+server.ts;699;js/missing-rate-limiting;high;"This route handler performs [a file system access](1), but is not rate-limited.
+This route handler performs [a file system access](2), but is not rate-limited.";codeql;backend;-;7024d8e5c82d;;FP;;;;
+server.ts;701;js/missing-rate-limiting;high;"This route handler performs [a file system access](1), but is not rate-limited.
+This route handler performs [a file system access](2), but is not rate-limited.";codeql;backend;-;0aa5be55aeaf;;FP;;;;
+routes/changePassword.ts;14;js/sensitive-get-query;medium;[Route handler](1) for GET requests uses query parameter as sensitive data.;codeql;backend;-;4154f5a94fb3;;FP;;;;
+routes/changePassword.ts;15;js/sensitive-get-query;medium;[Route handler](1) for GET requests uses query parameter as sensitive data.;codeql;backend;-;de24b94dca3c;;FP;;;;
+routes/changePassword.ts;17;js/sensitive-get-query;medium;[Route handler](1) for GET requests uses query parameter as sensitive data.;codeql;backend;-;62ce9ff46ae8;;FP;;;;
+routes/fileServer.ts;32;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;a1971e5832ca;;FP;;;;
+routes/keyServer.ts;14;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;d839a20ff7b0;;FP;;;;
+routes/logfileServer.ts;14;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;9c32bbc69f0d;;FP;;;;
+routes/profileImageUrlUpload.ts;29;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;4ddc479c2241;;FP;;;;
+routes/quarantineServer.ts;14;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;795d8e1d24ae;;FP;;;;
+routes/vulnCodeSnippet.ts;89;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;9635a600bce5;;FP;;;;
+routes/vulnCodeSnippet.ts;90;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;a095de757d30;;FP;;;;
+routes/vulnCodeFixes.ts;82;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;55dca977a247;;FP;;;;
+routes/vulnCodeFixes.ts;83;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;b3a804467ab2;;FP;;;;
+lib/insecurity.ts;136;js/type-confusion-through-parameter-tampering;critical;Potential type confusion as [this HTTP request parameter](1) may be either an array or a string.;codeql;backend;-;d9889151a4df;redirectChallenge;TP;;;;
+routes/search.ts;22;js/type-confusion-through-parameter-tampering;critical;Potential type confusion as [this HTTP request parameter](1) may be either an array or a string.;codeql;backend;-;5e06c7c3cc7e;unionSqlInjectionChallenge dbSchemaChallenge;TP;;;;
+routes/profileImageUrlUpload.ts;24;js/request-forgery;critical;The [URL](1) of this request depends on a [user-provided value](2).;codeql;backend;-;01709bdce4f1;;FP;;;;
+lib/accuracy.ts;71;js/prototype-polluting-assignment;medium;"This assignment may alter Object.prototype if a malicious '__proto__' string is injected from [user controlled input](1).
+This assignment may alter Object.prototype if a malicious '__proto__' string is injected from [user controlled input](2).";codeql;backend;-;67bc12c74ae9;;FP;;;;
+server.ts;317;js/missing-token-validation;high;"This cookie middleware is serving a [request handler](1) without CSRF protection.
+This cookie middleware is serving a [request handler](2) without CSRF protection.
+This cookie middleware is serving a [request handler](3) without CSRF protection.
+This cookie middleware is serving a [request handler](";codeql;backend;-;6d3d66185d8e;;FP;;;;
+routes/dataErasure.ts;107;js/template-object-injection;critical;"Template object depends on a [user-provided value](1).
+Template object depends on a [user-provided value](2).";codeql;backend;-;0eaefb8665d9;;FP;;;;
+routes/dataErasure.ts;123;js/template-object-injection;critical;"Template object depends on a [user-provided value](1).
+Template object depends on a [user-provided value](2).";codeql;backend;-;af6c7e3e99e6;;FP;;;;
+routes/likeProductReviews.ts;25;js/sql-injection;high;"This query object depends on a [user-provided value](1).
+This query object depends on a [user-provided value](2).";codeql;backend;-;871226ae6b5c;;FP;;;;
+routes/likeProductReviews.ts;36;js/sql-injection;high;"This query object depends on a [user-provided value](1).
+This query object depends on a [user-provided value](2).";codeql;backend;-;26e157baf798;;FP;;;;
+routes/likeProductReviews.ts;43;js/sql-injection;high;"This query object depends on a [user-provided value](1).
+This query object depends on a [user-provided value](2).";codeql;backend;-;430c89d7d474;;FP;;;;
+routes/likeProductReviews.ts;51;js/sql-injection;high;"This query object depends on a [user-provided value](1).
+This query object depends on a [user-provided value](2).";codeql;backend;-;76b831f2c5d3;;FP;;;;
+routes/login.ts;34;js/sql-injection;high;"This query string depends on a [user-provided value](1).
+This query string depends on a [user-provided value](2).";codeql;backend;-;0888ba043111;loginAdminChallenge loginBenderChallenge loginJimChallenge;TP;;;;
+routes/search.ts;23;js/sql-injection;high;This query string depends on a [user-provided value](1).;codeql;backend;-;a73a2cdc56da;unionSqlInjectionChallenge dbSchemaChallenge;TP;;;;
+routes/updateProductReviews.ts;18;js/sql-injection;high;"This query object depends on a [user-provided value](1).
+This query object depends on a [user-provided value](2).";codeql;backend;-;9246f647fe66;noSqlReviewsChallenge forgedReviewChallenge;TP;;;;
+routes/trackOrder.ts;18;js/code-injection;critical;"This code execution depends on a [user-provided value](1).
+This code execution depends on a [user-provided value](2).";codeql;backend;-;aacd3b6a68bb;;FP;;;;
+routes/showProductReviews.ts;36;js/code-injection;critical;This code execution depends on a [user-provided value](1).;codeql;backend;-;da0431003dfe;;FP;;;;
+routes/checkKeys.ts;30;js/stack-trace-exposure;medium;This information exposed to the user depends on [stack trace information](1).;codeql;backend;-;db3e10e3cfc3;;FP;;;;
+routes/checkKeys.ts;39;js/stack-trace-exposure;medium;This information exposed to the user depends on [stack trace information](1).;codeql;backend;-;169c79122317;;FP;;;;
+routes/createProductReviews.ts;32;js/stack-trace-exposure;medium;This information exposed to the user depends on [stack trace information](1).;codeql;backend;-;44e4e678af60;;FP;;;;
+routes/likeProductReviews.ts;56;js/stack-trace-exposure;medium;This information exposed to the user depends on [stack trace information](1).;codeql;backend;-;7069795f1a8f;;FP;;;;
+routes/nftMint.ts;33;js/stack-trace-exposure;medium;This information exposed to the user depends on [stack trace information](1).;codeql;backend;-;74fa6e95e06d;;FP;;;;
+routes/nftMint.ts;50;js/stack-trace-exposure;medium;This information exposed to the user depends on [stack trace information](1).;codeql;backend;-;04768007e8d1;;FP;;;;
+routes/web3Wallet.ts;36;js/stack-trace-exposure;medium;This information exposed to the user depends on [stack trace information](1).;codeql;backend;-;6ac9bf8e2896;;FP;;;;
+lib/insecurity.ts;41;js/insufficient-password-hash;high;"Password from [an access to clearTextPassword](1) is hashed insecurely.
+Password from [an access to password](2) is hashed insecurely.
+Password from [an access to password](3) is hashed insecurely.
+Password from [an access to currentPassword](4) is hashed insecurely.
+Password from [an access to curr";codeql;backend;-;8e65c7973c06;;FP;;;;
+lib/utils.ts;40;js/incomplete-sanitization;high;This does not escape backslash characters in the input.;codeql;backend;-;6a33b97f6779;;FP;;;;
+server.ts;257;js/incomplete-sanitization;high;This replaces only the first occurrence of '..'.;codeql;backend;-;0d21a560503f;;FP;;;;
+routes/redirect.ts;18;js/server-side-unvalidated-url-redirection;medium;Untrusted URL redirection depends on a [user-provided value](1).;codeql;backend;-;06fc3719110a;;FP;;;;
+lib/insecurity.ts;53;js/insecure-randomness;high;This uses a cryptographically insecure random number generated at [Math.random()](1) in a security context.;codeql;backend;-;7c4da7a99f7e;;FP;;;;
+lib/codingChallenges.ts;30;js/file-system-race;high;The file may have changed since it [was checked](1).;codeql;backend;-;9e1b0de4a83b;;FP;;;;
+lib/insecurity.ts;55;js/user-controlled-bypass;high;"This condition guards a sensitive [action](1), but a [user-provided value](2) controls it.
+This condition guards a sensitive [action](1), but a [user-provided value](3) controls it.
+This condition guards a sensitive [action](1), but a [user-provided value](4) controls it.
+This condition guards a sen";codeql;backend;-;cd370495d24d;;FP;;;;
+lib/insecurity.ts;188;js/user-controlled-bypass;high;"This condition guards a sensitive [action](1), but a [user-provided value](2) controls it.
+This condition guards a sensitive [action](1), but a [user-provided value](3) controls it.";codeql;backend;-;3266892c3144;;FP;;;;
+routes/fileServer.ts;26;js/user-controlled-bypass;high;This condition guards a sensitive [action](1), but a [user-provided value](2) controls it.;codeql;backend;-;06577d40a6bf;;FP;;;;
+routes/verify.ts;118;js/user-controlled-bypass;high;This condition guards a sensitive [action](1), but a [user-provided value](2) controls it.;codeql;backend;-;c37e474c8e0d;;FP;;;;
+routes/profileImageFileUpload.ts;42;js/http-to-file-access;medium;Write to file system depends on [Untrusted data](1).;codeql;backend;-;b061874b5679;;FP;;;;
+lib/challengeUtils.ts;99;js/log-injection;medium;Log entry depends on a [user-provided value](1).;codeql;backend;-;6c98868e9c16;;FP;;;;
+lib/accuracy.ts;68;js/remote-property-injection;high;"A property name to write to depends on a [user-provided value](1).
+A property name to write to depends on a [user-provided value](2).
+A property name to write to depends on a [user-provided value](3).";codeql;backend;-;91d9aee826d4;;FP;;;;
+lib/insecurity.ts;74;js/remote-property-injection;high;"A property name to write to depends on a [user-provided value](1).
+A property name to write to depends on a [user-provided value](2).";codeql;backend;-;73e85619748a;;FP;;;;
+lib/insecurity.ts;75;js/remote-property-injection;high;"A property name to write to depends on a [user-provided value](1).
+A property name to write to depends on a [user-provided value](2).";codeql;backend;-;2d630f6622d6;;FP;;;;
+routes/currentUser.ts;31;js/remote-property-injection;high;A property name to write to depends on a [user-provided value](1).;codeql;backend;-;111747b2e2a0;;FP;;;;
+routes/vulnCodeFixes.ts;42;js/remote-property-injection;high;"A property name to write to depends on a [user-provided value](1).
+A property name to write to depends on a [user-provided value](2).
+A property name to write to depends on a [user-provided value](3).";codeql;backend;-;3049113a928f;;FP;;;;
+;;GHSA-v75r-vx73-82pj;high;@cyclonedx/cyclonedx-npm: Shell Injection via Unsanitized --workspace Argument;npm-audit;backend;mit;60f22ae42423;GHSA-v75r-vx73-82pj;TP;@cyclonedx/cyclonedx-npm;4.2.1;GHSA-v75r-vx73-82pj;True
+;;GHSA-q69g-4hcv-6jg4;high;@cyclonedx/cyclonedx-npm: Shell Injection via Unsanitized --workspace Argument on Windows;npm-audit;backend;mit;1c481718fc8e;GHSA-q69g-4hcv-6jg4;TP;@cyclonedx/cyclonedx-npm;4.2.1;GHSA-q69g-4hcv-6jg4;True
+;;GHSA-c475-qrg2-pj4r;high;basic-ftp: Quadratic-time CPU denial of service in Client.list() Unix directory-listing parser (RE_LINE backtracking);npm-audit;backend;mit;854158934351;GHSA-c475-qrg2-pj4r;TP;basic-ftp;5.3.1;GHSA-c475-qrg2-pj4r;False
+;;GHSA-xwcq-pm8m-c4vf;critical;crypto-js PBKDF2 1,000 times weaker than specified in 1993 and 1.3M times weaker than current standard;npm-audit;backend;mit;c01f0f7b9413;GHSA-xwcq-pm8m-c4vf;TP;crypto-js;3.3.0;GHSA-xwcq-pm8m-c4vf;False
+;;GHSA-rg76-677x-56q9;critical;crypto-js: Insufficient Entropy in Cryptographic Secret Generation via Vulnerable CryptoJS Dependency Chain;npm-audit;backend;mit;5214bfae6d33;GHSA-rg76-677x-56q9;TP;crypto-js;3.3.0;GHSA-rg76-677x-56q9;False
+;;GHSA-qr28-fpjm-wq7f;high;decode-uri-component vulnerable to denial of service via quadratic replacement of percent-encoded runs;npm-audit;backend;mit;26806f270863;GHSA-qr28-fpjm-wq7f;TP;decode-uri-component;0.2.2;GHSA-qr28-fpjm-wq7f;False
+;;GHSA-mp2f-45pm-3cg9;critical;Decompress: Archive extraction can create files and links outside of the target directory;npm-audit;backend;mit;26f19dcd1bcb;GHSA-mp2f-45pm-3cg9;TP;decompress;4.2.1;GHSA-mp2f-45pm-3cg9;False
+;;GHSA-hrh2-vp3x-79xf;critical;@xhmikosr/decompress: Path traversal via symlink chain;npm-audit;backend;mit;75822a7e906b;GHSA-hrh2-vp3x-79xf;TP;decompress;4.2.1;GHSA-hrh2-vp3x-79xf;False
+;;GHSA-6g6m-m6h5-w9gf;high;Authorization bypass in express-jwt;npm-audit;backend;mit;e4c0b464fc4c;GHSA-6g6m-m6h5-w9gf;TP;express-jwt;0.1.3;GHSA-6g6m-m6h5-w9gf;False
+;;GHSA-rc47-6667-2j5j;high;http-cache-semantics vulnerable to Regular Expression Denial of Service;npm-audit;backend;mit;4c970b6eeef8;GHSA-rc47-6667-2j5j;TP;http-cache-semantics;3.8.1;GHSA-rc47-6667-2j5j;False
+;;GHSA-c7hr-j4mj-j2w6;critical;Verification Bypass in jsonwebtoken;npm-audit;backend;mit;5caae7660841;GHSA-c7hr-j4mj-j2w6;TP;jsonwebtoken;0.1.0;GHSA-c7hr-j4mj-j2w6;False
+;;GHSA-c7hr-j4mj-j2w6;critical;Verification Bypass in jsonwebtoken;npm-audit;backend;mit;e7b1feaa2d88;GHSA-c7hr-j4mj-j2w6;TP;jsonwebtoken;0.4.0;GHSA-c7hr-j4mj-j2w6;False
+;;GHSA-8cf7-32gw-wr33;high;jsonwebtoken unrestricted key type could lead to legacy keys usage ;npm-audit;backend;mit;639c7e9d904c;GHSA-8cf7-32gw-wr33;TP;jsonwebtoken;0.1.0;GHSA-8cf7-32gw-wr33;False
+;;GHSA-8cf7-32gw-wr33;high;jsonwebtoken unrestricted key type could lead to legacy keys usage ;npm-audit;backend;mit;ca5d588b8710;GHSA-8cf7-32gw-wr33;TP;jsonwebtoken;0.4.0;GHSA-8cf7-32gw-wr33;False
+;;GHSA-gjcw-v447-2w7q;high;Forgeable Public/Private Tokens in jws;npm-audit;backend;mit;26a16226d11f;GHSA-gjcw-v447-2w7q;TP;jws;0.2.6;GHSA-gjcw-v447-2w7q;False
+;;GHSA-869p-cjfg-cm3x;high;auth0/node-jws Improperly Verifies HMAC Signature;npm-audit;backend;mit;8262f31e4b75;GHSA-869p-cjfg-cm3x;TP;jws;0.2.6;GHSA-869p-cjfg-cm3x;False
+;;GHSA-35jh-r3h4-6jhm;high;Command Injection in lodash;npm-audit;backend;mit;198b0c492f3f;GHSA-35jh-r3h4-6jhm;TP;lodash;2.4.2;GHSA-35jh-r3h4-6jhm;False
+;;GHSA-4xc9-xhrj-v574;high;Prototype Pollution in lodash;npm-audit;backend;mit;903a75a2f08f;GHSA-4xc9-xhrj-v574;TP;lodash;2.4.2;GHSA-4xc9-xhrj-v574;False
+;;GHSA-jf85-cpcp-j695;critical;Prototype Pollution in lodash;npm-audit;backend;mit;a63dc7b70e84;GHSA-jf85-cpcp-j695;TP;lodash;2.4.2;GHSA-jf85-cpcp-j695;False
+;;GHSA-5mrr-rgp6-x4gr;critical;Command Injection in marsdb;npm-audit;backend;mit;52f9a3b310c8;GHSA-5mrr-rgp6-x4gr;TP;marsdb;0.6.11;GHSA-5mrr-rgp6-x4gr;False
+;;GHSA-3ppc-4f35-3m26;high;minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern;npm-audit;backend;mit;8a7c72b674b4;;FP;minimatch;10.2.6;GHSA-3ppc-4f35-3m26;True
+;;GHSA-3ppc-4f35-3m26;high;minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern;npm-audit;backend;mit;fa9278a83f18;GHSA-3ppc-4f35-3m26;TP;minimatch;3.0.5;GHSA-3ppc-4f35-3m26;False
+;;GHSA-3ppc-4f35-3m26;high;minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern;npm-audit;backend;mit;3ef4c53d1f19;;FP;minimatch;9.0.9;GHSA-3ppc-4f35-3m26;False
+;;GHSA-7r86-cg39-jmmj;high;minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments;npm-audit;backend;mit;f537f1c7e7a5;;FP;minimatch;10.2.6;GHSA-7r86-cg39-jmmj;True
+;;GHSA-7r86-cg39-jmmj;high;minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments;npm-audit;backend;mit;8e5dcc129af4;GHSA-7r86-cg39-jmmj;TP;minimatch;3.0.5;GHSA-7r86-cg39-jmmj;False
+;;GHSA-7r86-cg39-jmmj;high;minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments;npm-audit;backend;mit;5596bfd5f5d9;;FP;minimatch;9.0.9;GHSA-7r86-cg39-jmmj;False
+;;GHSA-23c5-xmqv-rm74;high;minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions;npm-audit;backend;mit;c9c74ec68cda;;FP;minimatch;10.2.6;GHSA-23c5-xmqv-rm74;True
+;;GHSA-23c5-xmqv-rm74;high;minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions;npm-audit;backend;mit;d711b7ac67b0;GHSA-23c5-xmqv-rm74;TP;minimatch;3.0.5;GHSA-23c5-xmqv-rm74;False
+;;GHSA-23c5-xmqv-rm74;high;minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions;npm-audit;backend;mit;2160adf3cdef;;FP;minimatch;9.0.9;GHSA-23c5-xmqv-rm74;False
+;;GHSA-446m-mv8f-q348;high;Regular Expression Denial of Service in moment;npm-audit;backend;mit;a6be1693959c;GHSA-446m-mv8f-q348;TP;moment;2.0.0;GHSA-446m-mv8f-q348;False
+;;GHSA-8hfj-j24r-96c4;high;Path Traversal: 'dir/../../filename' in moment.locale;npm-audit;backend;mit;8ec7e9dd4ca9;GHSA-8hfj-j24r-96c4;TP;moment;2.0.0;GHSA-8hfj-j24r-96c4;False
+;;GHSA-cgfm-xwp7-2cvr;high;Sanitize-html Vulnerable To REDoS Attacks;npm-audit;backend;mit;78d595bfe605;GHSA-cgfm-xwp7-2cvr;TP;sanitize-html;1.4.2;GHSA-cgfm-xwp7-2cvr;False
+;;GHSA-34x7-hfp2-rc4v;high;node-tar Vulnerable to Arbitrary File Creation/Overwrite via Hardlink Path Traversal;npm-audit;backend;mit;df3b121e933c;GHSA-34x7-hfp2-rc4v;TP;tar;6.2.1;GHSA-34x7-hfp2-rc4v;False
+;;GHSA-8qq5-rm4j-mr97;high;node-tar is Vulnerable to Arbitrary File Overwrite and Symlink Poisoning via Insufficient Path Sanitization;npm-audit;backend;mit;010c0363622e;GHSA-8qq5-rm4j-mr97;TP;tar;6.2.1;GHSA-8qq5-rm4j-mr97;False
+;;GHSA-83g3-92jg-28cx;high;Arbitrary File Read/Write via Hardlink Target Escape Through Symlink Chain in node-tar Extraction;npm-audit;backend;mit;f7a6a6e5e026;GHSA-83g3-92jg-28cx;TP;tar;6.2.1;GHSA-83g3-92jg-28cx;False
+;;GHSA-qffp-2rhf-9h96;high;tar has Hardlink Path Traversal via Drive-Relative Linkpath;npm-audit;backend;mit;2d630fb0ceb7;GHSA-qffp-2rhf-9h96;TP;tar;6.2.1;GHSA-qffp-2rhf-9h96;False
+;;GHSA-9ppj-qmqm-q256;high;node-tar Symlink Path Traversal via Drive-Relative Linkpath;npm-audit;backend;mit;4228f60b69b6;GHSA-9ppj-qmqm-q256;TP;tar;6.2.1;GHSA-9ppj-qmqm-q256;False
+;;GHSA-r6q2-hw4h-h46w;high;Race Condition in node-tar Path Reservations via Unicode Ligature Collisions on macOS APFS;npm-audit;backend;mit;f1efb2095163;GHSA-r6q2-hw4h-h46w;TP;tar;6.2.1;GHSA-r6q2-hw4h-h46w;False
+;;GHSA-23hp-3jrh-7fpw;critical;node-tar: Decompression/parse DoS via unlimited input;npm-audit;backend;mit;15f164dd0bde;GHSA-23hp-3jrh-7fpw;TP;tar;6.2.1;GHSA-23hp-3jrh-7fpw;False
+;;GHSA-8x88-c5mf-7j5w;high;node-tar: Negative tar entry size causes infinite loop in archive replace;npm-audit;backend;mit;164829e6ba06;GHSA-8x88-c5mf-7j5w;TP;tar;6.2.1;GHSA-8x88-c5mf-7j5w;False
+;;GHSA-r292-9mhp-454m;high;node-tar: Uncontrolled recursion in mapHas/filesFilter allows uncatchable stack-overflow DoS via crafted long-path tar with member selection;npm-audit;backend;mit;428a89a54957;GHSA-r292-9mhp-454m;TP;tar;6.2.1;GHSA-r292-9mhp-454m;False
+;;GHSA-c475-qrg2-pj4r;high;basic-ftp: Quadratic-time CPU denial of service in Client.list() Unix directory-listing parser (RE_LINE backtracking);npm-audit;backend;ohne;f3e1c05fb975;GHSA-c475-qrg2-pj4r;TP;basic-ftp;5.3.1;GHSA-c475-qrg2-pj4r;False
+;;GHSA-xwcq-pm8m-c4vf;critical;crypto-js PBKDF2 1,000 times weaker than specified in 1993 and 1.3M times weaker than current standard;npm-audit;backend;ohne;f856363e81a7;GHSA-xwcq-pm8m-c4vf;TP;crypto-js;3.3.0;GHSA-xwcq-pm8m-c4vf;False
+;;GHSA-rg76-677x-56q9;critical;crypto-js: Insufficient Entropy in Cryptographic Secret Generation via Vulnerable CryptoJS Dependency Chain;npm-audit;backend;ohne;4448dd4e1a39;GHSA-rg76-677x-56q9;TP;crypto-js;3.3.0;GHSA-rg76-677x-56q9;False
+;;GHSA-qr28-fpjm-wq7f;high;decode-uri-component vulnerable to denial of service via quadratic replacement of percent-encoded runs;npm-audit;backend;ohne;d2bd498cb6e7;GHSA-qr28-fpjm-wq7f;TP;decode-uri-component;0.2.2;GHSA-qr28-fpjm-wq7f;False
+;;GHSA-mp2f-45pm-3cg9;critical;Decompress: Archive extraction can create files and links outside of the target directory;npm-audit;backend;ohne;b5969da6bdbc;GHSA-mp2f-45pm-3cg9;TP;decompress;4.2.1;GHSA-mp2f-45pm-3cg9;False
+;;GHSA-hrh2-vp3x-79xf;critical;@xhmikosr/decompress: Path traversal via symlink chain;npm-audit;backend;ohne;f90373383001;GHSA-hrh2-vp3x-79xf;TP;decompress;4.2.1;GHSA-hrh2-vp3x-79xf;False
+;;GHSA-6g6m-m6h5-w9gf;high;Authorization bypass in express-jwt;npm-audit;backend;ohne;c61424d4d523;GHSA-6g6m-m6h5-w9gf;TP;express-jwt;0.1.3;GHSA-6g6m-m6h5-w9gf;False
+;;GHSA-rc47-6667-2j5j;high;http-cache-semantics vulnerable to Regular Expression Denial of Service;npm-audit;backend;ohne;50859f3324de;GHSA-rc47-6667-2j5j;TP;http-cache-semantics;3.8.1;GHSA-rc47-6667-2j5j;False
+;;GHSA-c7hr-j4mj-j2w6;critical;Verification Bypass in jsonwebtoken;npm-audit;backend;ohne;7891f4dea625;GHSA-c7hr-j4mj-j2w6;TP;jsonwebtoken;0.1.0;GHSA-c7hr-j4mj-j2w6;False
+;;GHSA-c7hr-j4mj-j2w6;critical;Verification Bypass in jsonwebtoken;npm-audit;backend;ohne;511327c676d7;GHSA-c7hr-j4mj-j2w6;TP;jsonwebtoken;0.4.0;GHSA-c7hr-j4mj-j2w6;False
+;;GHSA-8cf7-32gw-wr33;high;jsonwebtoken unrestricted key type could lead to legacy keys usage ;npm-audit;backend;ohne;0c765ecc7da0;GHSA-8cf7-32gw-wr33;TP;jsonwebtoken;0.1.0;GHSA-8cf7-32gw-wr33;False
+;;GHSA-8cf7-32gw-wr33;high;jsonwebtoken unrestricted key type could lead to legacy keys usage ;npm-audit;backend;ohne;42acaa43982a;GHSA-8cf7-32gw-wr33;TP;jsonwebtoken;0.4.0;GHSA-8cf7-32gw-wr33;False
+;;GHSA-gjcw-v447-2w7q;high;Forgeable Public/Private Tokens in jws;npm-audit;backend;ohne;b79f04e7fc2a;GHSA-gjcw-v447-2w7q;TP;jws;0.2.6;GHSA-gjcw-v447-2w7q;False
+;;GHSA-869p-cjfg-cm3x;high;auth0/node-jws Improperly Verifies HMAC Signature;npm-audit;backend;ohne;ea6546f2c8ba;GHSA-869p-cjfg-cm3x;TP;jws;0.2.6;GHSA-869p-cjfg-cm3x;False
+;;GHSA-35jh-r3h4-6jhm;high;Command Injection in lodash;npm-audit;backend;ohne;14c2c0a7ca40;GHSA-35jh-r3h4-6jhm;TP;lodash;2.4.2;GHSA-35jh-r3h4-6jhm;False
+;;GHSA-4xc9-xhrj-v574;high;Prototype Pollution in lodash;npm-audit;backend;ohne;f830c920558b;GHSA-4xc9-xhrj-v574;TP;lodash;2.4.2;GHSA-4xc9-xhrj-v574;False
+;;GHSA-jf85-cpcp-j695;critical;Prototype Pollution in lodash;npm-audit;backend;ohne;14b95a625226;GHSA-jf85-cpcp-j695;TP;lodash;2.4.2;GHSA-jf85-cpcp-j695;False
+;;GHSA-5mrr-rgp6-x4gr;critical;Command Injection in marsdb;npm-audit;backend;ohne;6a8618b54ce4;GHSA-5mrr-rgp6-x4gr;TP;marsdb;0.6.11;GHSA-5mrr-rgp6-x4gr;False
+;;GHSA-3ppc-4f35-3m26;high;minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern;npm-audit;backend;ohne;a0404b9af7b8;GHSA-3ppc-4f35-3m26;TP;minimatch;3.0.5;GHSA-3ppc-4f35-3m26;False
+;;GHSA-3ppc-4f35-3m26;high;minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern;npm-audit;backend;ohne;d411fe9d465a;;FP;minimatch;9.0.9;GHSA-3ppc-4f35-3m26;False
+;;GHSA-7r86-cg39-jmmj;high;minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments;npm-audit;backend;ohne;72e326665ee4;GHSA-7r86-cg39-jmmj;TP;minimatch;3.0.5;GHSA-7r86-cg39-jmmj;False
+;;GHSA-7r86-cg39-jmmj;high;minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments;npm-audit;backend;ohne;2e51d81d29be;;FP;minimatch;9.0.9;GHSA-7r86-cg39-jmmj;False
+;;GHSA-23c5-xmqv-rm74;high;minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions;npm-audit;backend;ohne;61d18c590091;GHSA-23c5-xmqv-rm74;TP;minimatch;3.0.5;GHSA-23c5-xmqv-rm74;False
+;;GHSA-23c5-xmqv-rm74;high;minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions;npm-audit;backend;ohne;d761dd4cb352;;FP;minimatch;9.0.9;GHSA-23c5-xmqv-rm74;False
+;;GHSA-446m-mv8f-q348;high;Regular Expression Denial of Service in moment;npm-audit;backend;ohne;8729c0327df1;GHSA-446m-mv8f-q348;TP;moment;2.0.0;GHSA-446m-mv8f-q348;False
+;;GHSA-8hfj-j24r-96c4;high;Path Traversal: 'dir/../../filename' in moment.locale;npm-audit;backend;ohne;4a86b7136e80;GHSA-8hfj-j24r-96c4;TP;moment;2.0.0;GHSA-8hfj-j24r-96c4;False
+;;GHSA-cgfm-xwp7-2cvr;high;Sanitize-html Vulnerable To REDoS Attacks;npm-audit;backend;ohne;e059b60c495e;GHSA-cgfm-xwp7-2cvr;TP;sanitize-html;1.4.2;GHSA-cgfm-xwp7-2cvr;False
+;;GHSA-34x7-hfp2-rc4v;high;node-tar Vulnerable to Arbitrary File Creation/Overwrite via Hardlink Path Traversal;npm-audit;backend;ohne;c4097973f0f2;GHSA-34x7-hfp2-rc4v;TP;tar;6.2.1;GHSA-34x7-hfp2-rc4v;False
+;;GHSA-8qq5-rm4j-mr97;high;node-tar is Vulnerable to Arbitrary File Overwrite and Symlink Poisoning via Insufficient Path Sanitization;npm-audit;backend;ohne;d737f4e39bf6;GHSA-8qq5-rm4j-mr97;TP;tar;6.2.1;GHSA-8qq5-rm4j-mr97;False
+;;GHSA-83g3-92jg-28cx;high;Arbitrary File Read/Write via Hardlink Target Escape Through Symlink Chain in node-tar Extraction;npm-audit;backend;ohne;e5548de52804;GHSA-83g3-92jg-28cx;TP;tar;6.2.1;GHSA-83g3-92jg-28cx;False
+;;GHSA-qffp-2rhf-9h96;high;tar has Hardlink Path Traversal via Drive-Relative Linkpath;npm-audit;backend;ohne;0f1287c4ff25;GHSA-qffp-2rhf-9h96;TP;tar;6.2.1;GHSA-qffp-2rhf-9h96;False
+;;GHSA-9ppj-qmqm-q256;high;node-tar Symlink Path Traversal via Drive-Relative Linkpath;npm-audit;backend;ohne;4fd39ba7568f;GHSA-9ppj-qmqm-q256;TP;tar;6.2.1;GHSA-9ppj-qmqm-q256;False
+;;GHSA-r6q2-hw4h-h46w;high;Race Condition in node-tar Path Reservations via Unicode Ligature Collisions on macOS APFS;npm-audit;backend;ohne;f3558ad5fbc2;GHSA-r6q2-hw4h-h46w;TP;tar;6.2.1;GHSA-r6q2-hw4h-h46w;False
+;;GHSA-23hp-3jrh-7fpw;critical;node-tar: Decompression/parse DoS via unlimited input;npm-audit;backend;ohne;788622293866;GHSA-23hp-3jrh-7fpw;TP;tar;6.2.1;GHSA-23hp-3jrh-7fpw;False
+;;GHSA-8x88-c5mf-7j5w;high;node-tar: Negative tar entry size causes infinite loop in archive replace;npm-audit;backend;ohne;5a9c6ab7f344;GHSA-8x88-c5mf-7j5w;TP;tar;6.2.1;GHSA-8x88-c5mf-7j5w;False
+;;GHSA-r292-9mhp-454m;high;node-tar: Uncontrolled recursion in mapHas/filesFilter allows uncatchable stack-overflow DoS via crafted long-path tar with member selection;npm-audit;backend;ohne;0ab119f90c77;GHSA-r292-9mhp-454m;TP;tar;6.2.1;GHSA-r292-9mhp-454m;False
+;;GHSA-96hv-2xvq-fx4p;high;ws: Memory exhaustion DoS from tiny fragments and data chunks;npm-audit;frontend;mit;484cae2aa87f;GHSA-96hv-2xvq-fx4p;TP;ws;8.18.0;GHSA-96hv-2xvq-fx4p;False
+;;GHSA-96hv-2xvq-fx4p;high;ws: Memory exhaustion DoS from tiny fragments and data chunks;npm-audit;frontend;ohne;2f892a4a782b;GHSA-96hv-2xvq-fx4p;TP;ws;8.18.0;GHSA-96hv-2xvq-fx4p;False
+lib/antiCheat.ts;198;javascript.lang.security.audit.path-traversal.path-join-resolve-traversal.path-join-resolve-traversal;medium;Detected possible user input going into a `path.join` or `path.resolve` function. This could possibly lead to a path traversal vulnerability,  where the attacker can access arbitrary files stored in the file system. Instead, be sure to sanitize or validate user input first.;semgrep;backend;-;9b32bf203c69;;FP;;;;
+lib/codingChallenges.ts;77;javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp;medium;RegExp() called with a `challengeKey` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-co;semgrep;backend;-;81276d60e9cf;;FP;;;;
+lib/codingChallenges.ts;79;javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp;medium;RegExp() called with a `challengeKey` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-co;semgrep;backend;-;8f4f45aa8f79;;FP;;;;
+lib/insecurity.ts;42;javascript.lang.security.audit.hardcoded-hmac-key.hardcoded-hmac-key;medium;Detected a hardcoded hmac key. Avoid hardcoding secrets and consider using an alternate option such as reading the secret from a config file or using an environment variable.;semgrep;backend;-;ba81c81fc72e;;FP;;;;
+lib/insecurity.ts;54;javascript.jsonwebtoken.security.jwt-hardcode.hardcoded-jwt-secret;medium;A hard-coded credential was detected. It is not recommended to store credentials in source-code, as this risks secrets being leaked and used by either an internal or external malicious adversary. It is recommended to use environment variables to securely provide credentials or retrieve credentials f;semgrep;backend;-;5b77ba34589b;;FP;;;;
+lib/insecurity.ts;150;javascript.lang.security.audit.hardcoded-hmac-key.hardcoded-hmac-key;medium;Detected a hardcoded hmac key. Avoid hardcoding secrets and consider using an alternate option such as reading the secret from a config file or using an environment variable.;semgrep;backend;-;3463a3c9448f;;FP;;;;
+routes/captcha.ts;22;javascript.browser.security.eval-detected.eval-detected;medium;Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.;semgrep;backend;-;d059e8fbb6ba;;FP;;;;
+routes/currentUser.ts;31;javascript.express.security.audit.remote-property-injection.remote-property-injection;high;Bracket object notation with user input is present, this might allow an attacker to access all properties of the object and even it's prototype. Use literal values for object properties.;semgrep;backend;-;26dd1dce3a75;;FP;;;;
+routes/fileServer.ts;32;javascript.express.security.audit.express-res-sendfile.express-res-sendfile;medium;The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the inte;semgrep;backend;-;75cec121e4a4;;FP;;;;
+routes/keyServer.ts;14;javascript.express.security.audit.express-res-sendfile.express-res-sendfile;medium;The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the inte;semgrep;backend;-;c2f5d32f29e9;;FP;;;;
+routes/logfileServer.ts;14;javascript.express.security.audit.express-res-sendfile.express-res-sendfile;medium;The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the inte;semgrep;backend;-;08690b08b715;;FP;;;;
+routes/login.ts;34;javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection;high;Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.;semgrep;backend;-;9b63859e9c5d;loginAdminChallenge loginBenderChallenge loginJimChallenge;TP;;;;
+routes/quarantineServer.ts;14;javascript.express.security.audit.express-res-sendfile.express-res-sendfile;medium;The application processes user-input, this is passed to res.sendFile which can allow an attacker to arbitrarily read files on the system through path traversal. It is recommended to perform input validation in addition to canonicalizing the path. This allows you to validate the path against the inte;semgrep;backend;-;023380a850d5;;FP;;;;
+routes/redirect.ts;18;javascript.express.security.audit.express-open-redirect.express-open-redirect;medium;The application redirects to a URL specified by user-supplied input `query` that is not validated. This could redirect users to malicious locations. Consider using an allow-list approach to validate URLs, or warn users they are being redirected to a third-party website.;semgrep;backend;-;0a66dfa4e54e;;FP;;;;
+routes/search.ts;23;javascript.sequelize.security.audit.sequelize-injection-express.express-sequelize-injection;high;Detected a sequelize statement that is tainted by user-input. This could lead to SQL injection if the variable is user-controlled and is not properly sanitized. In order to prevent SQL injection, it is recommended to use parameterized queries or prepared statements.;semgrep;backend;-;18a21a95111a;unionSqlInjectionChallenge dbSchemaChallenge;TP;;;;
+routes/userProfile.ts;65;javascript.browser.security.eval-detected.eval-detected;medium;Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.;semgrep;backend;-;8d0a28cc798a;;FP;;;;
+routes/userProfile.ts;65;javascript.lang.security.audit.code-string-concat.code-string-concat;high;Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.;semgrep;backend;-;e464c087215a;;FP;;;;
+routes/videoHandler.ts;71;javascript.lang.security.audit.unknown-value-with-script-tag.unknown-value-with-script-tag;medium;Cannot determine what 'subs' is and it is used with a '<script>' tag. This could be susceptible to cross-site scripting (XSS). Ensure 'subs' is not externally controlled, or sanitize this data.;semgrep;backend;-;8757a94668c3;;FP;;;;
+server.ts;158;javascript.lang.security.audit.unsafe-formatstring.unsafe-formatstring;low;Detected string concatenation with a non-literal variable in a util.format / console.log function. If an attacker injects a format specifier in the string, it will forge the log message. Try to use constant values for the format string.;semgrep;backend;-;fb5656571690;;FP;;;;
+server.ts;269;javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing;medium;Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.;semgrep;backend;-;dcccba0e34ed;;FP;;;;
+server.ts;290;javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing;medium;Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.;semgrep;backend;-;5c5a0b849b3c;directoryListingChallenge;TP;;;;
+server.ts;294;javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing;medium;Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.;semgrep;backend;-;1b497a40c88f;;FP;;;;
+server.ts;298;javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing;medium;Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.;semgrep;backend;-;50f65cfb45eb;;FP;;;;
+server.ts;302;javascript.express.security.audit.express-check-directory-listing.express-check-directory-listing;medium;Directory listing/indexing is enabled, which may lead to disclosure of sensitive directories and files. It is recommended to disable directory listing unless it is a public resource. If you need directory listing, ensure that sensitive files are inaccessible when querying the resource.;semgrep;backend;-;1b9b2f16a8e7;accessLogDisclosureChallenge;TP;;;;
+frontend/src/hacking-instructor/helpers/helpers.ts;49;javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop;medium;Possibility of prototype polluting function detected. By adding or modifying attributes of an object prototype, it is possible to create attributes that exist on every object, or replace critical attributes with malicious ones. This can be problematic if the software depends on existence or non-exis;semgrep;frontend;-;f22fb12dba6d;;FP;;;;
+;;CVE-2026-55849;high;@cyclonedx/cyclonedx-npm: Shell Injection via Unsanitized --workspace Argument;trivy;backend;mit;84cad95b279e;GHSA-v75r-vx73-82pj;TP;@cyclonedx/cyclonedx-npm;4.2.1;GHSA-v75r-vx73-82pj;True
+;;CVE-2026-71538;high;@cyclonedx/cyclonedx-npm: Shell Injection via Unsanitized --workspace Argument on Windows;trivy;backend;mit;16fc8ea79aa2;GHSA-q69g-4hcv-6jg4;TP;@cyclonedx/cyclonedx-npm;4.2.1;GHSA-q69g-4hcv-6jg4;True
+;;NSWG-ECO-428;high;Out-of-bounds Read;trivy;backend;mit;46a54ba3006c;;FP;base64url;0.0.6;;False
+;;CVE-2026-102990;high;basic-ftp: basic-ftp: Denial of Service via crafted Unix directory listings;trivy;backend;mit;ae0ccbda443f;GHSA-c475-qrg2-pj4r;TP;basic-ftp;5.3.1;GHSA-c475-qrg2-pj4r;False
+;;CVE-2023-46233;critical;crypto-js: PBKDF2 1,000 times weaker than specified in 1993 and 1.3M times weaker than current standard;trivy;backend;mit;6782b14a707a;GHSA-xwcq-pm8m-c4vf;TP;crypto-js;3.3.0;GHSA-xwcq-pm8m-c4vf;False
+;;CVE-2026-71851;critical;crypto-js: crypto-js: Insufficient Entropy in Cryptographic Secret Generation via Vulnerable CryptoJS Dependency Chain;trivy;backend;mit;0d314ff4975d;GHSA-rg76-677x-56q9;TP;crypto-js;3.3.0;GHSA-rg76-677x-56q9;False
+;;CVE-2026-118664;high;decode-uri-component: decode-uri-component: Denial of Service via malformed percent-encoded input;trivy;backend;mit;911caa0248f5;GHSA-qr28-fpjm-wq7f;TP;decode-uri-component;0.2.2;GHSA-qr28-fpjm-wq7f;False
+;;CVE-2026-101894;critical;@xhmikosr/decompress: @xhmikosr/decompress: Path traversal via symlink chain;trivy;backend;mit;ccdb59497dd8;GHSA-hrh2-vp3x-79xf;TP;decompress;4.2.1;GHSA-hrh2-vp3x-79xf;False
+;;CVE-2026-53486;critical;decompress: @xhmikosr/decompress: Decompress: Arbitrary file read/write via crafted archive extraction;trivy;backend;mit;293cf7cf5681;GHSA-mp2f-45pm-3cg9;TP;decompress;4.2.1;GHSA-mp2f-45pm-3cg9;False
+;;CVE-2020-15084;high;Authorization bypass in express-jwt;trivy;backend;mit;4a9d1cf63afd;GHSA-6g6m-m6h5-w9gf;TP;express-jwt;0.1.3;GHSA-6g6m-m6h5-w9gf;False
+;;CVE-2022-25881;high;http-cache-semantics: Regular Expression Denial of Service (ReDoS) vulnerability;trivy;backend;mit;723e5a5fe852;GHSA-rc47-6667-2j5j;TP;http-cache-semantics;3.8.1;GHSA-rc47-6667-2j5j;False
+;;CVE-2015-9235;critical;nodejs-jsonwebtoken: verification step bypass with an altered token;trivy;backend;mit;56e0486f8fe0;GHSA-c7hr-j4mj-j2w6;TP;jsonwebtoken;0.1.0;GHSA-c7hr-j4mj-j2w6;False
+;;CVE-2022-23539;high;jsonwebtoken: Unrestricted key type could lead to legacy keys usagen;trivy;backend;mit;6404442d1c3e;GHSA-8cf7-32gw-wr33;TP;jsonwebtoken;0.1.0;GHSA-8cf7-32gw-wr33;False
+;;NSWG-ECO-17;high;Verification Bypass;trivy;backend;mit;8d459ae68678;;FP;jsonwebtoken;0.1.0;;False
+;;CVE-2015-9235;critical;nodejs-jsonwebtoken: verification step bypass with an altered token;trivy;backend;mit;073ffc03cbca;GHSA-c7hr-j4mj-j2w6;TP;jsonwebtoken;0.4.0;GHSA-c7hr-j4mj-j2w6;False
+;;CVE-2022-23539;high;jsonwebtoken: Unrestricted key type could lead to legacy keys usagen;trivy;backend;mit;a743ddf65ed7;GHSA-8cf7-32gw-wr33;TP;jsonwebtoken;0.4.0;GHSA-8cf7-32gw-wr33;False
+;;NSWG-ECO-17;high;Verification Bypass;trivy;backend;mit;75ad45297872;;FP;jsonwebtoken;0.4.0;;False
+;;CVE-2016-1000223;high;Forgeable Public/Private Tokens;trivy;backend;mit;0a32df294274;GHSA-gjcw-v447-2w7q;TP;jws;0.2.6;GHSA-gjcw-v447-2w7q;False
+;;CVE-2025-65945;high;node-jws: auth0/node-jws: Improper signature verification in HS256 algorithm;trivy;backend;mit;4ccbc4f6579c;GHSA-869p-cjfg-cm3x;TP;jws;0.2.6;GHSA-869p-cjfg-cm3x;False
+;;CVE-2019-10744;critical;nodejs-lodash: prototype pollution in defaultsDeep function leading to modifying properties;trivy;backend;mit;90db5287441e;GHSA-jf85-cpcp-j695;TP;lodash;2.4.2;GHSA-jf85-cpcp-j695;False
+;;CVE-2018-16487;high;lodash: Prototype pollution in utilities function;trivy;backend;mit;2edfb90a8224;GHSA-4xc9-xhrj-v574;TP;lodash;2.4.2;GHSA-4xc9-xhrj-v574;False
+;;CVE-2021-23337;high;nodejs-lodash: command injection via template;trivy;backend;mit;a902663d7777;GHSA-35jh-r3h4-6jhm;TP;lodash;2.4.2;GHSA-35jh-r3h4-6jhm;False
+;;GHSA-5mrr-rgp6-x4gr;critical;Command Injection in marsdb;trivy;backend;mit;e31ba767bb26;GHSA-5mrr-rgp6-x4gr;TP;marsdb;0.6.11;GHSA-5mrr-rgp6-x4gr;False
+;;CVE-2026-26996;high;minimatch: minimatch: Denial of Service via specially crafted glob patterns;trivy;backend;mit;69f497db1a11;GHSA-3ppc-4f35-3m26;TP;minimatch;3.0.5;GHSA-3ppc-4f35-3m26;False
+;;CVE-2026-27903;high;minimatch: minimatch: Denial of Service due to unbounded recursive backtracking via crafted glob patterns;trivy;backend;mit;094885d3cf3f;GHSA-7r86-cg39-jmmj;TP;minimatch;3.0.5;GHSA-7r86-cg39-jmmj;False
+;;CVE-2026-27904;high;minimatch: Minimatch: Denial of Service via catastrophic backtracking in glob expressions;trivy;backend;mit;125c6a43b8e7;GHSA-23c5-xmqv-rm74;TP;minimatch;3.0.5;GHSA-23c5-xmqv-rm74;False
+;;CVE-2017-18214;high;nodejs-moment: Regular expression denial of service;trivy;backend;mit;abf1620dc50d;GHSA-446m-mv8f-q348;TP;moment;2.0.0;GHSA-446m-mv8f-q348;False
+;;CVE-2022-24785;high;Moment.js: Path traversal  in moment.locale;trivy;backend;mit;5433fec2c058;GHSA-8hfj-j24r-96c4;TP;moment;2.0.0;GHSA-8hfj-j24r-96c4;False
+;;CVE-2022-25887;high;sanitize-html: insecure global regular expression replacement logic may lead to ReDoS;trivy;backend;mit;ace25afbdd79;GHSA-cgfm-xwp7-2cvr;TP;sanitize-html;1.4.2;GHSA-cgfm-xwp7-2cvr;False
+;;CVE-2026-59873;critical;tar: node-tar: Denial of Service via crafted gzip bomb;trivy;backend;mit;0a6c81414f5e;GHSA-23hp-3jrh-7fpw;TP;tar;6.2.1;GHSA-23hp-3jrh-7fpw;False
+;;CVE-2026-23745;high;node-tar: tar: node-tar: Arbitrary file overwrite and symlink poisoning via unsanitized linkpaths in archives;trivy;backend;mit;8a2b0f854682;GHSA-8qq5-rm4j-mr97;TP;tar;6.2.1;GHSA-8qq5-rm4j-mr97;False
+;;CVE-2026-23950;high;node-tar: tar: node-tar: Arbitrary file overwrite via Unicode path collision race condition;trivy;backend;mit;177d8d6997c9;GHSA-r6q2-hw4h-h46w;TP;tar;6.2.1;GHSA-r6q2-hw4h-h46w;False
+;;CVE-2026-24842;high;node-tar: tar: node-tar: Arbitrary file creation via path traversal bypass in hardlink security check;trivy;backend;mit;ee9459532ac6;GHSA-34x7-hfp2-rc4v;TP;tar;6.2.1;GHSA-34x7-hfp2-rc4v;False
+;;CVE-2026-26960;high;node-tar: node-tar: Arbitrary file read/write via malicious archive hardlink creation;trivy;backend;mit;285b184595d2;GHSA-83g3-92jg-28cx;TP;tar;6.2.1;GHSA-83g3-92jg-28cx;False
+;;CVE-2026-29786;high;node-tar: hardlink path traversal via drive-relative linkpath;trivy;backend;mit;1bc80e4a6804;GHSA-qffp-2rhf-9h96;TP;tar;6.2.1;GHSA-qffp-2rhf-9h96;False
+;;CVE-2026-31802;high;tar: tar: File overwrite via drive-relative symlink traversal;trivy;backend;mit;043c0c2e8710;GHSA-9ppj-qmqm-q256;TP;tar;6.2.1;GHSA-9ppj-qmqm-q256;False
+;;CVE-2026-59874;high;tar: Node-tar: Denial of Service via malformed tar archive header;trivy;backend;mit;ac3de7c67327;GHSA-8x88-c5mf-7j5w;TP;tar;6.2.1;GHSA-8x88-c5mf-7j5w;False
+;;CVE-2026-73566;high;tar: node-tar: Denial of Service via crafted long-path tar archive;trivy;backend;mit;7f778e882c20;GHSA-r292-9mhp-454m;TP;tar;6.2.1;GHSA-r292-9mhp-454m;False
+;;NSWG-ECO-428;high;Out-of-bounds Read;trivy;backend;ohne;a79f33d0c37f;;FP;base64url;0.0.6;;False
+;;CVE-2026-102990;high;basic-ftp: basic-ftp: Denial of Service via crafted Unix directory listings;trivy;backend;ohne;d7f4bdc46094;GHSA-c475-qrg2-pj4r;TP;basic-ftp;5.3.1;GHSA-c475-qrg2-pj4r;False
+;;CVE-2023-46233;critical;crypto-js: PBKDF2 1,000 times weaker than specified in 1993 and 1.3M times weaker than current standard;trivy;backend;ohne;2544de224fed;GHSA-xwcq-pm8m-c4vf;TP;crypto-js;3.3.0;GHSA-xwcq-pm8m-c4vf;False
+;;CVE-2026-71851;critical;crypto-js: crypto-js: Insufficient Entropy in Cryptographic Secret Generation via Vulnerable CryptoJS Dependency Chain;trivy;backend;ohne;ed0d5f008f04;GHSA-rg76-677x-56q9;TP;crypto-js;3.3.0;GHSA-rg76-677x-56q9;False
+;;CVE-2026-118664;high;decode-uri-component: decode-uri-component: Denial of Service via malformed percent-encoded input;trivy;backend;ohne;d2b9131cdeb8;GHSA-qr28-fpjm-wq7f;TP;decode-uri-component;0.2.2;GHSA-qr28-fpjm-wq7f;False
+;;CVE-2026-101894;critical;@xhmikosr/decompress: @xhmikosr/decompress: Path traversal via symlink chain;trivy;backend;ohne;faaad0f9af16;GHSA-hrh2-vp3x-79xf;TP;decompress;4.2.1;GHSA-hrh2-vp3x-79xf;False
+;;CVE-2026-53486;critical;decompress: @xhmikosr/decompress: Decompress: Arbitrary file read/write via crafted archive extraction;trivy;backend;ohne;5ffad0bc4349;GHSA-mp2f-45pm-3cg9;TP;decompress;4.2.1;GHSA-mp2f-45pm-3cg9;False
+;;CVE-2020-15084;high;Authorization bypass in express-jwt;trivy;backend;ohne;3e39489952fd;GHSA-6g6m-m6h5-w9gf;TP;express-jwt;0.1.3;GHSA-6g6m-m6h5-w9gf;False
+;;CVE-2022-25881;high;http-cache-semantics: Regular Expression Denial of Service (ReDoS) vulnerability;trivy;backend;ohne;c331663e1af7;GHSA-rc47-6667-2j5j;TP;http-cache-semantics;3.8.1;GHSA-rc47-6667-2j5j;False
+;;CVE-2015-9235;critical;nodejs-jsonwebtoken: verification step bypass with an altered token;trivy;backend;ohne;6c23401af638;GHSA-c7hr-j4mj-j2w6;TP;jsonwebtoken;0.1.0;GHSA-c7hr-j4mj-j2w6;False
+;;CVE-2022-23539;high;jsonwebtoken: Unrestricted key type could lead to legacy keys usagen;trivy;backend;ohne;b02e92af3267;GHSA-8cf7-32gw-wr33;TP;jsonwebtoken;0.1.0;GHSA-8cf7-32gw-wr33;False
+;;NSWG-ECO-17;high;Verification Bypass;trivy;backend;ohne;7c1410beccb8;;FP;jsonwebtoken;0.1.0;;False
+;;CVE-2015-9235;critical;nodejs-jsonwebtoken: verification step bypass with an altered token;trivy;backend;ohne;9c6a319b8af3;GHSA-c7hr-j4mj-j2w6;TP;jsonwebtoken;0.4.0;GHSA-c7hr-j4mj-j2w6;False
+;;CVE-2022-23539;high;jsonwebtoken: Unrestricted key type could lead to legacy keys usagen;trivy;backend;ohne;f46c841f644f;GHSA-8cf7-32gw-wr33;TP;jsonwebtoken;0.4.0;GHSA-8cf7-32gw-wr33;False
+;;NSWG-ECO-17;high;Verification Bypass;trivy;backend;ohne;51017fa90501;;FP;jsonwebtoken;0.4.0;;False
+;;CVE-2016-1000223;high;Forgeable Public/Private Tokens;trivy;backend;ohne;d2f4efd6a3eb;GHSA-gjcw-v447-2w7q;TP;jws;0.2.6;GHSA-gjcw-v447-2w7q;False
+;;CVE-2025-65945;high;node-jws: auth0/node-jws: Improper signature verification in HS256 algorithm;trivy;backend;ohne;7fa3ece2ae6e;GHSA-869p-cjfg-cm3x;TP;jws;0.2.6;GHSA-869p-cjfg-cm3x;False
+;;CVE-2019-10744;critical;nodejs-lodash: prototype pollution in defaultsDeep function leading to modifying properties;trivy;backend;ohne;f6797af9193f;GHSA-jf85-cpcp-j695;TP;lodash;2.4.2;GHSA-jf85-cpcp-j695;False
+;;CVE-2018-16487;high;lodash: Prototype pollution in utilities function;trivy;backend;ohne;7d25d7383935;GHSA-4xc9-xhrj-v574;TP;lodash;2.4.2;GHSA-4xc9-xhrj-v574;False
+;;CVE-2021-23337;high;nodejs-lodash: command injection via template;trivy;backend;ohne;eba0c0ee565c;GHSA-35jh-r3h4-6jhm;TP;lodash;2.4.2;GHSA-35jh-r3h4-6jhm;False
+;;GHSA-5mrr-rgp6-x4gr;critical;Command Injection in marsdb;trivy;backend;ohne;b6e84e11aea8;GHSA-5mrr-rgp6-x4gr;TP;marsdb;0.6.11;GHSA-5mrr-rgp6-x4gr;False
+;;CVE-2026-26996;high;minimatch: minimatch: Denial of Service via specially crafted glob patterns;trivy;backend;ohne;6820b78b9a50;GHSA-3ppc-4f35-3m26;TP;minimatch;3.0.5;GHSA-3ppc-4f35-3m26;False
+;;CVE-2026-27903;high;minimatch: minimatch: Denial of Service due to unbounded recursive backtracking via crafted glob patterns;trivy;backend;ohne;81e9eddae718;GHSA-7r86-cg39-jmmj;TP;minimatch;3.0.5;GHSA-7r86-cg39-jmmj;False
+;;CVE-2026-27904;high;minimatch: Minimatch: Denial of Service via catastrophic backtracking in glob expressions;trivy;backend;ohne;1b9d797548c9;GHSA-23c5-xmqv-rm74;TP;minimatch;3.0.5;GHSA-23c5-xmqv-rm74;False
+;;CVE-2017-18214;high;nodejs-moment: Regular expression denial of service;trivy;backend;ohne;230c2ee90960;GHSA-446m-mv8f-q348;TP;moment;2.0.0;GHSA-446m-mv8f-q348;False
+;;CVE-2022-24785;high;Moment.js: Path traversal  in moment.locale;trivy;backend;ohne;242ca5121c27;GHSA-8hfj-j24r-96c4;TP;moment;2.0.0;GHSA-8hfj-j24r-96c4;False
+;;CVE-2022-25887;high;sanitize-html: insecure global regular expression replacement logic may lead to ReDoS;trivy;backend;ohne;040b0b37ac44;GHSA-cgfm-xwp7-2cvr;TP;sanitize-html;1.4.2;GHSA-cgfm-xwp7-2cvr;False
+;;CVE-2026-59873;critical;tar: node-tar: Denial of Service via crafted gzip bomb;trivy;backend;ohne;f88c03a63467;GHSA-23hp-3jrh-7fpw;TP;tar;6.2.1;GHSA-23hp-3jrh-7fpw;False
+;;CVE-2026-23745;high;node-tar: tar: node-tar: Arbitrary file overwrite and symlink poisoning via unsanitized linkpaths in archives;trivy;backend;ohne;6a281e12228d;GHSA-8qq5-rm4j-mr97;TP;tar;6.2.1;GHSA-8qq5-rm4j-mr97;False
+;;CVE-2026-23950;high;node-tar: tar: node-tar: Arbitrary file overwrite via Unicode path collision race condition;trivy;backend;ohne;3ffe08bbe356;GHSA-r6q2-hw4h-h46w;TP;tar;6.2.1;GHSA-r6q2-hw4h-h46w;False
+;;CVE-2026-24842;high;node-tar: tar: node-tar: Arbitrary file creation via path traversal bypass in hardlink security check;trivy;backend;ohne;9fd08c9dbe22;GHSA-34x7-hfp2-rc4v;TP;tar;6.2.1;GHSA-34x7-hfp2-rc4v;False
+;;CVE-2026-26960;high;node-tar: node-tar: Arbitrary file read/write via malicious archive hardlink creation;trivy;backend;ohne;3bbf8a92f816;GHSA-83g3-92jg-28cx;TP;tar;6.2.1;GHSA-83g3-92jg-28cx;False
+;;CVE-2026-29786;high;node-tar: hardlink path traversal via drive-relative linkpath;trivy;backend;ohne;a2b4d34300f1;GHSA-qffp-2rhf-9h96;TP;tar;6.2.1;GHSA-qffp-2rhf-9h96;False
+;;CVE-2026-31802;high;tar: tar: File overwrite via drive-relative symlink traversal;trivy;backend;ohne;aca314b0d490;GHSA-9ppj-qmqm-q256;TP;tar;6.2.1;GHSA-9ppj-qmqm-q256;False
+;;CVE-2026-59874;high;tar: Node-tar: Denial of Service via malformed tar archive header;trivy;backend;ohne;317bea940332;GHSA-8x88-c5mf-7j5w;TP;tar;6.2.1;GHSA-8x88-c5mf-7j5w;False
+;;CVE-2026-73566;high;tar: node-tar: Denial of Service via crafted long-path tar archive;trivy;backend;ohne;5c2a2d698645;GHSA-r292-9mhp-454m;TP;tar;6.2.1;GHSA-r292-9mhp-454m;False
+;;CVE-2026-48779;high;ws: ws: Denial of Service via memory exhaustion from small WebSocket fragments;trivy;frontend;mit;e49497cf420d;GHSA-96hv-2xvq-fx4p;TP;ws;8.18.0;GHSA-96hv-2xvq-fx4p;False
+;;CVE-2026-48779;high;ws: ws: Denial of Service via memory exhaustion from small WebSocket fragments;trivy;frontend;ohne;5ed60bac8c54;GHSA-96hv-2xvq-fx4p;TP;ws;8.18.0;GHSA-96hv-2xvq-fx4p;False

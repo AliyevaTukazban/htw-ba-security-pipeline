@@ -1,0 +1,8 @@
+{
+  "werkzeug": "semgrep",
+  "teil": "frontend",
+  "variante": "-",
+  "lauf": 1,
+  "runner": "ubuntu24 20261111.370.1",
+  "status": "success"
+}

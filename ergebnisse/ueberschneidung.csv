@@ -1,0 +1,7 @@
+﻿werkzeugart;teil;variante;referenz;beide;nur_semgrep;nur_codeql;keines;nur_npm-audit;nur_trivy
+SAST;frontend;-;7;0;0;0;7;;
+SAST;backend;-;18;7;0;3;8;;
+SCA;frontend;mit;1;1;;;0;0;0
+SCA;frontend;ohne;1;1;;;0;0;0
+SCA;backend;mit;35;35;;;0;0;0
+SCA;backend;ohne;33;33;;;0;0;0
