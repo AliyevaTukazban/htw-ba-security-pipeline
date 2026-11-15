@@ -1,1 +1,212 @@
+# Schritt 2: Messung (Abschnitt 3.4).
+# 12 Messreihen (Tabelle 3) x 5 Läufe = 60 Durchläufe auf ubuntu-24.04.
+# Danach werden alle Rohdaten eingesammelt, ausgewertet und ins Repository committet.
+name: 2 Messung
 
+on:
+  workflow_dispatch:
+    inputs:
+      umfang:
+        description: "Testlauf (nur 1 Lauf je Messreihe) oder vollständige Messung (5 Läufe)"
+        type: choice
+        options: ["vollständig", "test"]
+        default: "test"
+
+permissions:
+  contents: write
+
+jobs:
+  messung:
+    name: ${{ matrix.kombi.werkzeug }} ${{ matrix.kombi.teil }} ${{ matrix.kombi.variante }} (Lauf ${{ matrix.lauf }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        lauf: ${{ fromJSON(inputs.umfang == 'test' && '[1]' || '[1, 2, 3, 4, 5]') }}
+        kombi:
+          - { werkzeug: semgrep,   teil: frontend, variante: "-" }
+          - { werkzeug: semgrep,   teil: backend,  variante: "-" }
+          - { werkzeug: codeql,    teil: frontend, variante: "-" }
+          - { werkzeug: codeql,    teil: backend,  variante: "-" }
+          - { werkzeug: npm-audit, teil: frontend, variante: mit }
+          - { werkzeug: npm-audit, teil: frontend, variante: ohne }
+          - { werkzeug: npm-audit, teil: backend,  variante: mit }
+          - { werkzeug: npm-audit, teil: backend,  variante: ohne }
+          - { werkzeug: trivy,     teil: frontend, variante: mit }
+          - { werkzeug: trivy,     teil: frontend, variante: ohne }
+          - { werkzeug: trivy,     teil: backend,  variante: mit }
+          - { werkzeug: trivy,     teil: backend,  variante: ohne }
+    env:
+      WERKZEUG: ${{ matrix.kombi.werkzeug }}
+      TEIL: ${{ matrix.kombi.teil }}
+      VARIANTE: ${{ matrix.kombi.variante }}
+      LAUF: ${{ matrix.lauf }}
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Eingefrorene Versionen lesen
+        run: |
+          test -f config/versionen.json || { echo "Zuerst Workflow 1 ausführen"; exit 1; }
+          for k in juice_shop_commit semgrep semgrep_regeln codeql_bundle codeql_abfragen trivy node; do
+            echo "$(echo $k | tr a-z A-Z)=$(jq -r .$k config/versionen.json)" >> "$GITHUB_ENV"
+          done
+          mkdir -p roh
+          echo "{}" > roh/zeit.json
+
+      # ------------------------------------------------------------ SAST
+      - name: Juice Shop auschecken (SAST)
+        if: env.WERKZEUG == 'semgrep' || env.WERKZEUG == 'codeql'
+        uses: actions/checkout@v4
+        with:
+          repository: juice-shop/juice-shop
+          ref: ${{ env.JUICE_SHOP_COMMIT }}
+          path: juice-shop
+
+      - name: Untersuchungsbereich anlegen (ohne Tests, Musterlösungen, fremde Bibliotheken)
+        if: env.WERKZEUG == 'semgrep' || env.WERKZEUG == 'codeql'
+        run: python3 scripts/bereich.py juice-shop "$TEIL" scan
+
+      - name: Python einrichten
+        if: env.WERKZEUG == 'semgrep'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Semgrep installieren (nicht gemessen)
+        if: env.WERKZEUG == 'semgrep'
+        run: pip install --quiet "semgrep==${SEMGREP}" && semgrep --version
+
+      - name: Semgrep ausführen (gemessen)
+        if: env.WERKZEUG == 'semgrep'
+        run: |
+          t0=$(date +%s.%N)
+          (cd scan && semgrep scan --config "$SEMGREP_REGELN" --metrics off --json \
+             --include '*.ts' --include '*.js' --include '*.html' \
+             --output ../roh/semgrep.json .) || echo "Semgrep Exit-Code $?"
+          t1=$(date +%s.%N)
+          python3 -c "import json;json.dump({'gesamt':round($t1-$t0,2)},open('roh/zeit.json','w'))"
+
+      - name: CodeQL installieren (nicht gemessen)
+        if: env.WERKZEUG == 'codeql'
+        run: |
+          curl -sSL -o bundle.tar.gz \
+            "https://github.com/github/codeql-action/releases/download/${CODEQL_BUNDLE}/codeql-bundle-linux64.tar.gz"
+          tar xzf bundle.tar.gz && rm bundle.tar.gz
+          ./codeql/codeql version
+
+      - name: CodeQL ausführen (gemessen, Datenbank und Analyse getrennt)
+        if: env.WERKZEUG == 'codeql'
+        run: |
+          t0=$(date +%s.%N)
+          ./codeql/codeql database create db --language=javascript-typescript --source-root=scan --threads=0 --overwrite
+          t1=$(date +%s.%N)
+          ./codeql/codeql database analyze db "$CODEQL_ABFRAGEN" --format=sarif-latest \
+            --output=roh/codeql.sarif --threads=0
+          t2=$(date +%s.%N)
+          python3 -c "import json;json.dump({'db_erstellen':round($t1-$t0,2),'analyse':round($t2-$t1,2),'gesamt':round($t2-$t0,2)},open('roh/zeit.json','w'))"
+
+      # ------------------------------------------------------------ SCA
+      - name: Node.js einrichten (eingefrorene Version)
+        if: env.WERKZEUG == 'npm-audit'
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE }}
+
+      - name: Lockfile des Teils bereitstellen
+        if: env.WERKZEUG == 'npm-audit' || env.WERKZEUG == 'trivy'
+        run: |
+          mkdir -p arbeit
+          cp lockfiles/$TEIL/package.json lockfiles/$TEIL/package-lock.json arbeit/
+
+      - name: npm audit ausführen (gemessen)
+        if: env.WERKZEUG == 'npm-audit'
+        run: |
+          OPTION=""; [ "$VARIANTE" = "ohne" ] && OPTION="--omit=dev"
+          echo "npm $(npm -v), Option: ${OPTION:-keine}"
+          t0=$(date +%s.%N)
+          (cd arbeit && npm audit --json $OPTION > ../roh/npm-audit.json) || echo "npm audit meldet Schwachstellen (Exit-Code $?)"
+          t1=$(date +%s.%N)
+          python3 -c "import json;json.dump({'gesamt':round($t1-$t0,2)},open('roh/zeit.json','w'))"
+
+      - name: Trivy installieren (nicht gemessen, mit Prüfsumme)
+        if: env.WERKZEUG == 'trivy'
+        run: |
+          BASIS="https://github.com/aquasecurity/trivy/releases/download/v${TRIVY}"
+          curl -sSLO "$BASIS/trivy_${TRIVY}_Linux-64bit.tar.gz"
+          curl -sSLO "$BASIS/trivy_${TRIVY}_checksums.txt"
+          sha256sum -c --ignore-missing "trivy_${TRIVY}_checksums.txt"
+          tar xzf "trivy_${TRIVY}_Linux-64bit.tar.gz" trivy
+          ./trivy --version
+
+      - name: Trivy ausführen (gemessen, Datenbank-Download getrennt)
+        if: env.WERKZEUG == 'trivy'
+        run: |
+          OPTION=""; [ "$VARIANTE" = "mit" ] && OPTION="--include-dev-deps"
+          t0=$(date +%s.%N)
+          ./trivy image --download-db-only --cache-dir .trivy-cache --no-progress
+          t1=$(date +%s.%N)
+          ./trivy fs --scanners vuln --format json --output roh/trivy.json --cache-dir .trivy-cache \
+            --skip-db-update --no-progress $OPTION arbeit
+          t2=$(date +%s.%N)
+          python3 -c "import json;json.dump({'db_download':round($t1-$t0,2),'scan':round($t2-$t1,2),'gesamt':round($t2-$t1,2)},open('roh/zeit.json','w'))"
+
+      # ------------------------------------------------------------ Ablage
+      - name: Metadaten schreiben
+        if: always()
+        run: |
+          python3 - <<PY
+          import json, os
+          json.dump({"werkzeug": os.environ["WERKZEUG"], "teil": os.environ["TEIL"],
+                     "variante": os.environ["VARIANTE"], "lauf": int(os.environ["LAUF"]),
+                     "runner": os.environ.get("ImageOS", "") + " " + os.environ.get("ImageVersion", ""),
+                     "status": "${{ job.status }}"},
+                    open("roh/meta.json", "w"), indent=2)
+          PY
+          cat roh/zeit.json; ls -la roh
+
+      - name: Rohdaten hochladen
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: roh-${{ matrix.kombi.werkzeug }}-${{ matrix.kombi.teil }}-${{ matrix.kombi.variante == '-' && 'na' || matrix.kombi.variante }}-lauf${{ matrix.lauf }}
+          path: roh/
+          retention-days: 90
+
+  auswertung:
+    needs: messung
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Alte Rohdaten entfernen
+        run: rm -rf ergebnisse/roh
+
+      - name: Rohdaten aller Durchläufe einsammeln
+        uses: actions/download-artifact@v4
+        with:
+          pattern: roh-*
+          path: ergebnisse/roh
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Auswerten und Diagramme erstellen
+        run: |
+          pip install --quiet matplotlib
+          echo "${{ github.run_id }}" > ergebnisse/messlauf_id.txt
+          python scripts/auswertung.py
+          python scripts/diagramme.py ergebnisse/kennzahlen.json ergebnisse/diagramme
+
+      - name: Ergebnisse ins Repository übernehmen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ergebnisse review
+          git commit -m "Messung ${{ github.run_id }}: Rohdaten und Auswertung" || echo "Keine Änderungen"
+          git pull --rebase && git push
