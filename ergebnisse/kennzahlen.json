@@ -150,8 +150,8 @@
       "recall": 1.0,
       "f1_streng": 0.959,
       "anteil_nur_build": 0.053,
-      "geprueft": 0,
-      "echt_ausserhalb_referenz": 0
+      "geprueft": 3,
+      "echt_ausserhalb_referenz": 3
     },
     {
       "werkzeug": "trivy",
@@ -167,8 +167,8 @@
       "recall": 1.0,
       "f1_streng": 0.957,
       "anteil_nur_build": 0.0,
-      "geprueft": 0,
-      "echt_ausserhalb_referenz": 0
+      "geprueft": 3,
+      "echt_ausserhalb_referenz": 3
     },
     {
       "werkzeug": "trivy",
