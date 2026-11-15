@@ -1,2 +1,0 @@
-# Keine externen Pakete nötig - analyze_findings.py nutzt nur die
-# Python-Standardbibliothek (json, csv, argparse, dataclasses, pathlib).
