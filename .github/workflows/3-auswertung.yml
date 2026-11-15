@@ -1,1 +1,38 @@
+# Schritt 3: Auswertung erneut berechnen, z. B. nachdem die Prüflisten
+# (review/pruefliste_sast.csv und review/pruefliste_sca.csv) ausgefüllt wurden.
+# Startet automatisch, wenn sich eine Datei im Ordner review/ ändert.
+name: 3 Auswertung
 
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "review/**"
+
+permissions:
+  contents: write
+
+jobs:
+  auswertung:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Auswerten und Diagramme erstellen
+        run: |
+          test -d ergebnisse/roh || { echo "Zuerst Workflow 2 ausführen"; exit 1; }
+          pip install --quiet matplotlib
+          python scripts/auswertung.py
+          python scripts/diagramme.py ergebnisse/kennzahlen.json ergebnisse/diagramme
+
+      - name: Ergebnisse ins Repository übernehmen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ergebnisse review
+          git commit -m "Auswertung mit manueller Prüfung aktualisiert" || echo "Keine Änderungen"
+          git pull --rebase && git push
