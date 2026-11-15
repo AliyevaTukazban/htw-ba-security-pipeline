@@ -13,9 +13,9 @@
       "precision_streng": 0.092,
       "recall": 0.556,
       "f1_streng": 0.158,
-      "geprueft": 0,
-      "echt_ausserhalb_referenz": null,
-      "precision_geprueft": null
+      "geprueft": 50,
+      "echt_ausserhalb_referenz": 49.0,
+      "precision_geprueft": 0.655
     },
     {
       "werkzeug": "codeql",
@@ -115,9 +115,9 @@
       "precision_streng": 0.167,
       "recall": 0.389,
       "f1_streng": 0.233,
-      "geprueft": 0,
-      "echt_ausserhalb_referenz": null,
-      "precision_geprueft": null
+      "geprueft": 20,
+      "echt_ausserhalb_referenz": 10,
+      "precision_geprueft": 0.583
     },
     {
       "werkzeug": "semgrep",
@@ -132,9 +132,9 @@
       "precision_streng": 0.0,
       "recall": 0.0,
       "f1_streng": 0.0,
-      "geprueft": 0,
-      "echt_ausserhalb_referenz": null,
-      "precision_geprueft": null
+      "geprueft": 1,
+      "echt_ausserhalb_referenz": 0,
+      "precision_geprueft": 0.0
     },
     {
       "werkzeug": "trivy",
