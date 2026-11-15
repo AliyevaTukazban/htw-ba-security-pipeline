@@ -19,7 +19,7 @@ from collections import defaultdict
 
 sys.path.insert(0, os.path.dirname(__file__))
 import bereich  # noqa: E402
-from sca_referenzliste import pakete_aus_lockfile  # noqa: E402
+from sca_referenzliste import pakete_aus_lockfile, semver, vergleich  # noqa: E402
 
 WURZEL = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SAST = ("semgrep", "codeql")
