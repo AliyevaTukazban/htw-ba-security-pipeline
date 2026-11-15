@@ -1,1 +1,113 @@
+# Schritt 1: Stichtag festlegen, Versionen einfrieren, Lockfiles erzeugen,
+# beide Referenzlisten erstellen (Abschnitte 3.2 und 3.3).
+# Wird EINMAL am Stichtag ausgeführt. Ergebnis wird ins Repository committet.
+name: 1 Vorbereitung (Stichtag)
 
+on:
+  workflow_dispatch:
+    inputs:
+      juice_shop_version:
+        description: "Version von OWASP Juice Shop"
+        default: "v20.3.0"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  vorbereitung:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Juice Shop auschecken
+        uses: actions/checkout@v4
+        with:
+          repository: juice-shop/juice-shop
+          ref: ${{ inputs.juice_shop_version }}
+          path: juice-shop
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Aktuelle Werkzeugversionen zum Stichtag ermitteln
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p config
+          SEMGREP=$(gh release view --repo semgrep/semgrep --json tagName -q .tagName | sed 's/^v//')
+          TRIVY=$(gh release view --repo aquasecurity/trivy --json tagName -q .tagName | sed 's/^v//')
+          CODEQL=$(gh api 'repos/github/codeql-action/releases?per_page=30' \
+                   --jq '[.[] | select(.prerelease == false and (.tag_name | startswith("codeql-bundle-v")))][0].tag_name')
+          JS_COMMIT=$(git -C juice-shop rev-parse HEAD)
+          cat > config/versionen.json <<JSON
+          {
+            "stichtag": "$(date -u +%Y-%m-%d)",
+            "juice_shop_version": "${{ inputs.juice_shop_version }}",
+            "juice_shop_commit": "$JS_COMMIT",
+            "semgrep": "$SEMGREP",
+            "semgrep_regeln": "p/default",
+            "codeql_bundle": "$CODEQL",
+            "codeql_abfragen": "codeql/javascript-queries:codeql-suites/javascript-security-extended.qls",
+            "trivy": "$TRIVY",
+            "node": "$(node -v | sed 's/^v//')",
+            "npm": "$(npm -v)",
+            "runner": "${ImageOS} ${ImageVersion}"
+          }
+          JSON
+          cat config/versionen.json
+
+      - name: Lockfiles zum Stichtag erzeugen (Backend und Frontend)
+        run: |
+          rm -rf lockfiles && mkdir -p lockfiles/backend lockfiles/frontend
+          cp juice-shop/package.json lockfiles/backend/
+          cp juice-shop/frontend/package.json lockfiles/frontend/
+          for teil in backend frontend; do
+            echo "== $teil"
+            (cd lockfiles/$teil && npm install --package-lock-only --ignore-scripts --no-audit --no-fund) \
+            || (cd lockfiles/$teil && echo "Erneut mit --legacy-peer-deps" && \
+                npm install --package-lock-only --ignore-scripts --no-audit --no-fund --legacy-peer-deps)
+          done
+          ls -la lockfiles/*
+
+      - name: GitHub Advisory Database zum Stichtag laden
+        run: |
+          git clone -q --depth 1 --filter=blob:none --sparse https://github.com/github/advisory-database.git adb
+          git -C adb sparse-checkout set advisories/github-reviewed
+          echo "ADB_COMMIT=$(git -C adb rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Referenzliste SCA erstellen (3.3.1)
+        run: |
+          python scripts/sca_referenzliste.py adb lockfiles ground_truth
+          python - <<PY
+          import json
+          p = "config/versionen.json"
+          v = json.load(open(p))
+          v["advisory_database_commit"] = "${ADB_COMMIT}"
+          json.dump(v, open(p, "w"), indent=2)
+          PY
+
+      - name: Referenzliste SAST erstellen (3.3.2)
+        run: python scripts/sast_referenzliste.py juice-shop ground_truth/sast.json
+
+      - name: Umfang des Untersuchungsbereichs prüfen (Tabelle 5)
+        run: |
+          python scripts/bereich.py juice-shop frontend /tmp/scan-frontend
+          python scripts/bereich.py juice-shop backend /tmp/scan-backend
+          cat ground_truth/umfang_pakete.json
+
+      - name: Ergebnis ins Repository übernehmen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config lockfiles ground_truth
+          git commit -m "Stichtag $(date -u +%Y-%m-%d): Versionen, Lockfiles und Referenzlisten" || echo "Keine Änderungen"
+          git push
