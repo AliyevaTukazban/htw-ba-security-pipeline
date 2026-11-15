@@ -1,0 +1,10 @@
+{
+  "frontend": {
+    "pakete_insgesamt": 780,
+    "davon_nur_build": 274
+  },
+  "backend": {
+    "pakete_insgesamt": 1182,
+    "davon_nur_build": 526
+  }
+}

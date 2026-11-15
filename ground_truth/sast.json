@@ -1,0 +1,316 @@
+{
+  "beschreibung": "Referenzliste SAST: markierte verwundbare Zeilen der Coding Challenges",
+  "anzahl": 25,
+  "anzahl_frontend": 7,
+  "anzahl_backend": 18,
+  "challenges": [
+    {
+      "challenge": "adminSectionChallenge",
+      "teil": "frontend",
+      "datei": "frontend/src/app/app.routing.ts",
+      "abschnitt": [
+        76,
+        277
+      ],
+      "verwundbare_zeilen": [
+        79
+      ]
+    },
+    {
+      "challenge": "scoreBoardChallenge",
+      "teil": "frontend",
+      "datei": "frontend/src/app/app.routing.ts",
+      "abschnitt": [
+        76,
+        277
+      ],
+      "verwundbare_zeilen": [
+        186
+      ]
+    },
+    {
+      "challenge": "web3SandboxChallenge",
+      "teil": "frontend",
+      "datei": "frontend/src/app/app.routing.ts",
+      "abschnitt": [
+        76,
+        277
+      ],
+      "verwundbare_zeilen": [
+        239
+      ]
+    },
+    {
+      "challenge": "tokenSaleChallenge",
+      "teil": "frontend",
+      "datei": "frontend/src/app/app.routing.ts",
+      "abschnitt": [
+        254,
+        322
+      ],
+      "verwundbare_zeilen": [
+        261,
+        300
+      ]
+    },
+    {
+      "challenge": "restfulXssChallenge",
+      "teil": "frontend",
+      "datei": "frontend/src/app/search-result/search-result.component.ts",
+      "abschnitt": [
+        61,
+        117
+      ],
+      "verwundbare_zeilen": [
+        113
+      ]
+    },
+    {
+      "challenge": "localXssChallenge",
+      "teil": "frontend",
+      "datei": "frontend/src/app/search-result/search-result.component.ts",
+      "abschnitt": [
+        137,
+        163
+      ],
+      "verwundbare_zeilen": [
+        146
+      ]
+    },
+    {
+      "challenge": "xssBonusChallenge",
+      "teil": "frontend",
+      "datei": "frontend/src/app/search-result/search-result.component.ts",
+      "abschnitt": [
+        137,
+        163
+      ],
+      "verwundbare_zeilen": [
+        146
+      ]
+    },
+    {
+      "challenge": "redirectCryptoCurrencyChallenge",
+      "teil": "backend",
+      "datei": "lib/insecurity.ts",
+      "abschnitt": [
+        121,
+        140
+      ],
+      "verwundbare_zeilen": [
+        124,
+        125,
+        126
+      ]
+    },
+    {
+      "challenge": "redirectChallenge",
+      "teil": "backend",
+      "datei": "lib/insecurity.ts",
+      "abschnitt": [
+        121,
+        140
+      ],
+      "verwundbare_zeilen": [
+        136
+      ]
+    },
+    {
+      "challenge": "weakPasswordChallenge",
+      "teil": "backend",
+      "datei": "models/user.ts",
+      "abschnitt": [
+        36,
+        75
+      ],
+      "verwundbare_zeilen": [
+        73
+      ]
+    },
+    {
+      "challenge": "chatbotGreedyInjectionChallenge",
+      "teil": "backend",
+      "datei": "routes/chat.ts",
+      "abschnitt": [
+        81,
+        188
+      ],
+      "verwundbare_zeilen": [
+        179
+      ]
+    },
+    {
+      "challenge": "chatbotPromptInjectionChallenge",
+      "teil": "backend",
+      "datei": "routes/chat.ts",
+      "abschnitt": [
+        175,
+        188
+      ],
+      "verwundbare_zeilen": [
+        179,
+        184
+      ]
+    },
+    {
+      "challenge": "loginAdminChallenge",
+      "teil": "backend",
+      "datei": "routes/login.ts",
+      "abschnitt": [
+        17,
+        56
+      ],
+      "verwundbare_zeilen": [
+        34
+      ]
+    },
+    {
+      "challenge": "loginBenderChallenge",
+      "teil": "backend",
+      "datei": "routes/login.ts",
+      "abschnitt": [
+        17,
+        56
+      ],
+      "verwundbare_zeilen": [
+        34
+      ]
+    },
+    {
+      "challenge": "loginJimChallenge",
+      "teil": "backend",
+      "datei": "routes/login.ts",
+      "abschnitt": [
+        17,
+        56
+      ],
+      "verwundbare_zeilen": [
+        34
+      ]
+    },
+    {
+      "challenge": "unionSqlInjectionChallenge",
+      "teil": "backend",
+      "datei": "routes/search.ts",
+      "abschnitt": [
+        18,
+        77
+      ],
+      "verwundbare_zeilen": [
+        23
+      ]
+    },
+    {
+      "challenge": "dbSchemaChallenge",
+      "teil": "backend",
+      "datei": "routes/search.ts",
+      "abschnitt": [
+        18,
+        77
+      ],
+      "verwundbare_zeilen": [
+        23
+      ]
+    },
+    {
+      "challenge": "noSqlReviewsChallenge",
+      "teil": "backend",
+      "datei": "routes/updateProductReviews.ts",
+      "abschnitt": [
+        13,
+        31
+      ],
+      "verwundbare_zeilen": [
+        18,
+        20
+      ]
+    },
+    {
+      "challenge": "forgedReviewChallenge",
+      "teil": "backend",
+      "datei": "routes/updateProductReviews.ts",
+      "abschnitt": [
+        13,
+        31
+      ],
+      "verwundbare_zeilen": [
+        16,
+        18
+      ]
+    },
+    {
+      "challenge": "directoryListingChallenge",
+      "teil": "backend",
+      "datei": "server.ts",
+      "abschnitt": [
+        288,
+        318
+      ],
+      "verwundbare_zeilen": [
+        290,
+        291
+      ]
+    },
+    {
+      "challenge": "accessLogDisclosureChallenge",
+      "teil": "backend",
+      "datei": "server.ts",
+      "abschnitt": [
+        288,
+        318
+      ],
+      "verwundbare_zeilen": [
+        302,
+        304
+      ]
+    },
+    {
+      "challenge": "resetPasswordMortyChallenge",
+      "teil": "backend",
+      "datei": "server.ts",
+      "abschnitt": [
+        368,
+        376
+      ],
+      "verwundbare_zeilen": [
+        374
+      ]
+    },
+    {
+      "challenge": "changeProductChallenge",
+      "teil": "backend",
+      "datei": "server.ts",
+      "abschnitt": [
+        378,
+        483
+      ],
+      "verwundbare_zeilen": [
+        398
+      ]
+    },
+    {
+      "challenge": "registerAdminChallenge",
+      "teil": "backend",
+      "datei": "server.ts",
+      "abschnitt": [
+        507,
+        546
+      ],
+      "verwundbare_zeilen": [
+        539
+      ]
+    },
+    {
+      "challenge": "exposedMetricsChallenge",
+      "teil": "backend",
+      "datei": "server.ts",
+      "abschnitt": [
+        755,
+        802
+      ],
+      "verwundbare_zeilen": [
+        759
+      ]
+    }
+  ]
+}

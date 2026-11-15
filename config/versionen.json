@@ -1,0 +1,14 @@
+{
+  "stichtag": "2026-11-15",
+  "juice_shop_version": "v20.3.0",
+  "juice_shop_commit": "f189f521266f42c6bd05884468292000cee852ed",
+  "semgrep": "1.185.0",
+  "semgrep_regeln": "p/default",
+  "codeql_bundle": "codeql-bundle-v2.27.4",
+  "codeql_abfragen": "codeql/javascript-queries:codeql-suites/javascript-security-extended.qls",
+  "trivy": "0.76.2",
+  "node": "22.23.4",
+  "npm": "10.9.9",
+  "runner": "ubuntu24 20261111.370.1",
+  "advisory_database_commit": "a9d7daffb7fbd51202df84d7185916a2cbab0b78"
+}
