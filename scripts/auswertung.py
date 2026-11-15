@@ -90,6 +90,35 @@ def lese_codeql(ordner, teil):
     return out
 
 
+def erfuellt(version, bereich_text):
+    """Prüft, ob eine Version einen npm-Versionsbereich wie '>=7.0.0 <11.0.1 || <3.1.3' erfüllt."""
+    v = semver(version or "")
+    if v is None or not bereich_text:
+        return True
+    for teilbereich in bereich_text.split("||"):
+        teilbereich = teilbereich.strip()
+        if " - " in teilbereich:  # Bindestrich-Bereich "a - b"
+            a, b = (x.strip() for x in teilbereich.split(" - ", 1))
+            teilbereich = f">={a} <={b}"
+        ok = True
+        for comp in teilbereich.split():
+            for op in (">=", "<=", ">", "<", "="):
+                if comp.startswith(op):
+                    break
+            else:
+                op = "="
+            ziel = semver(comp[len(op):] if comp.startswith(op) else comp)
+            if ziel is None:
+                continue
+            c = vergleich(v, ziel)
+            if not {">=": c >= 0, "<=": c <= 0, ">": c > 0, "<": c < 0, "=": c == 0}[op]:
+                ok = False
+                break
+        if ok:
+            return True
+    return False
+
+
 def lese_npm_audit(ordner, teil, lock):
     daten = lade(os.path.join(ordner, "npm-audit.json"), {}) or {}
     pakete_lock = (lock.get("packages") or {}) if lock else {}
@@ -100,7 +129,9 @@ def lese_npm_audit(ordner, teil, lock):
             if not isinstance(via, dict) or "url" not in via:
                 continue  # nur ein Verweis auf ein anderes Paket
             kennung = via["url"].rstrip("/").rsplit("/", 1)[-1]
-            for v in versionen or ["?"]:
+            # nur die installierten Versionen, die im Bereich dieses Eintrags liegen
+            passend = [v for v in versionen if erfuellt(v, via.get("range"))]
+            for v in passend or ["?"]:
                 out.append({"paket": via.get("name", name), "version": v, "kennung": kennung,
                             "schweregrad": schwere(via.get("severity")),
                             "nachricht": (via.get("title") or "")[:300]})
