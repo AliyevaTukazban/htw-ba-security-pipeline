@@ -1,7 +1,7 @@
-﻿id;werkzeug;teil;variante;paket;version;kennung;nachricht;bewertung;begruendung
-46a54ba3006c;trivy;backend;mit;base64url;0.0.6;NSWG-ECO-428;Out-of-bounds Read;;
-51017fa90501;trivy;backend;ohne;jsonwebtoken;0.4.0;NSWG-ECO-17;Verification Bypass;;
-75ad45297872;trivy;backend;mit;jsonwebtoken;0.4.0;NSWG-ECO-17;Verification Bypass;;
-7c1410beccb8;trivy;backend;ohne;jsonwebtoken;0.1.0;NSWG-ECO-17;Verification Bypass;;
-8d459ae68678;trivy;backend;mit;jsonwebtoken;0.1.0;NSWG-ECO-17;Verification Bypass;;
-a79f33d0c37f;trivy;backend;ohne;base64url;0.0.6;NSWG-ECO-428;Out-of-bounds Read;;
+id;bewertung;begruendung
+46a54ba3006c;echt;Die Schwachstelle ist real (GHSA-rvg8-pwq2-xj7q). In der GitHub Advisory Database ist sie nur als moderate eingestuft und fehlt deshalb in der Referenzliste.
+51017fa90501;echt;Die Schwachstelle ist real, entspricht aber GHSA-c7hr-j4mj-j2w6, das schon in der Referenzliste steht (Duplikat unter anderer Kennung).
+75ad45297872;echt;Die Schwachstelle ist real, entspricht aber GHSA-c7hr-j4mj-j2w6, das schon in der Referenzliste steht (Duplikat unter anderer Kennung).
+7c1410beccb8;echt;Die Schwachstelle ist real, entspricht aber GHSA-c7hr-j4mj-j2w6, das schon in der Referenzliste steht (Duplikat unter anderer Kennung).
+8d459ae68678;echt;Die Schwachstelle ist real, entspricht aber GHSA-c7hr-j4mj-j2w6, das schon in der Referenzliste steht (Duplikat unter anderer Kennung).
+a79f33d0c37f;echt;Die Schwachstelle ist real (GHSA-rvg8-pwq2-xj7q). In der GitHub Advisory Database ist sie nur als moderate eingestuft und fehlt deshalb in der Referenzliste.
