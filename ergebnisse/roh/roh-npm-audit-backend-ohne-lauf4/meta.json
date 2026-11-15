@@ -1,0 +1,8 @@
+{
+  "werkzeug": "npm-audit",
+  "teil": "backend",
+  "variante": "ohne",
+  "lauf": 4,
+  "runner": "ubuntu24 20261111.370.1",
+  "status": "success"
+}

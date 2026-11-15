@@ -9,7 +9,8 @@
         "@ethersproject/hash"
       ],
       "effects": [
-        "@ethersproject/contracts"
+        "@ethersproject/contracts",
+        "ethers"
       ],
       "range": "5.0.10 - 5.8.0",
       "nodes": [
@@ -241,18 +242,13 @@
         "@ethersproject/hash"
       ],
       "effects": [
-        "@ethersproject/hdnode",
-        "ethers"
+        "@ethersproject/hdnode"
       ],
       "range": "5.0.8 - 5.8.0",
       "nodes": [
         "node_modules/@ethersproject/wordlists"
       ],
-      "fixAvailable": {
-        "name": "ethers",
-        "version": "6.17.0",
-        "isSemVerMajor": true
-      }
+      "fixAvailable": true
     },
     "elliptic": {
       "name": "elliptic",

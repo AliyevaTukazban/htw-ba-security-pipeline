@@ -1,13 +1,13 @@
 ﻿werkzeug;teil;variante;laeufe;identisch;abweichende_laeufe;befunde_je_lauf
-codeql;backend;-;1;ja;;87
-codeql;frontend;-;1;ja;;0
-npm-audit;backend;mit;1;ja;;41
-npm-audit;backend;ohne;1;ja;;36
-npm-audit;frontend;mit;1;ja;;1
-npm-audit;frontend;ohne;1;ja;;1
-semgrep;backend;-;1;ja;;24
-semgrep;frontend;-;1;ja;;1
-trivy;backend;mit;1;ja;;38
-trivy;backend;ohne;1;ja;;36
-trivy;frontend;mit;1;ja;;1
-trivy;frontend;ohne;1;ja;;1
+codeql;backend;-;5;ja;;87 87 87 87 87
+codeql;frontend;-;5;ja;;0 0 0 0 0
+npm-audit;backend;mit;5;ja;;35 35 35 35 35
+npm-audit;backend;ohne;5;ja;;33 33 33 33 33
+npm-audit;frontend;mit;5;ja;;1 1 1 1 1
+npm-audit;frontend;ohne;5;ja;;1 1 1 1 1
+semgrep;backend;-;5;ja;;24 24 24 24 24
+semgrep;frontend;-;5;ja;;1 1 1 1 1
+trivy;backend;mit;5;ja;;38 38 38 38 38
+trivy;backend;ohne;5;ja;;36 36 36 36 36
+trivy;frontend;mit;5;ja;;1 1 1 1 1
+trivy;frontend;ohne;5;ja;;1 1 1 1 1

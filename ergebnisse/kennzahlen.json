@@ -38,16 +38,16 @@
       "werkzeug": "npm-audit",
       "teil": "backend",
       "variante": "mit",
-      "befunde": 41,
+      "befunde": 35,
       "tp": 35,
-      "fp": 6,
+      "fp": 0,
       "referenz": 35,
       "gefunden": 35,
       "fn": 0,
-      "precision_streng": 0.854,
+      "precision_streng": 1.0,
       "recall": 1.0,
-      "f1_streng": 0.921,
-      "anteil_nur_build": 0.122,
+      "f1_streng": 1.0,
+      "anteil_nur_build": 0.057,
       "geprueft": 0,
       "echt_ausserhalb_referenz": 0
     },
@@ -55,15 +55,15 @@
       "werkzeug": "npm-audit",
       "teil": "backend",
       "variante": "ohne",
-      "befunde": 36,
+      "befunde": 33,
       "tp": 33,
-      "fp": 3,
+      "fp": 0,
       "referenz": 33,
       "gefunden": 33,
       "fn": 0,
-      "precision_streng": 0.917,
+      "precision_streng": 1.0,
       "recall": 1.0,
-      "f1_streng": 0.957,
+      "f1_streng": 1.0,
       "anteil_nur_build": 0.0,
       "geprueft": 0,
       "echt_ausserhalb_referenz": 0
@@ -211,240 +211,240 @@
       "teil": "backend",
       "variante": "-",
       "messgroesse": "analyse",
-      "n": 1,
-      "median_s": 31.9,
-      "min_s": 31.9,
-      "max_s": 31.9
+      "n": 5,
+      "median_s": 22.72,
+      "min_s": 21.59,
+      "max_s": 31.92
     },
     {
       "werkzeug": "codeql",
       "teil": "backend",
       "variante": "-",
       "messgroesse": "db_erstellen",
-      "n": 1,
-      "median_s": 9.63,
-      "min_s": 9.63,
-      "max_s": 9.63
+      "n": 5,
+      "median_s": 8.93,
+      "min_s": 6.31,
+      "max_s": 11.94
     },
     {
       "werkzeug": "codeql",
       "teil": "backend",
       "variante": "-",
       "messgroesse": "gesamt",
-      "n": 1,
-      "median_s": 41.53,
-      "min_s": 41.53,
-      "max_s": 41.53
+      "n": 5,
+      "median_s": 32.57,
+      "min_s": 27.91,
+      "max_s": 43.87
     },
     {
       "werkzeug": "codeql",
       "teil": "frontend",
       "variante": "-",
       "messgroesse": "analyse",
-      "n": 1,
-      "median_s": 29.18,
-      "min_s": 29.18,
-      "max_s": 29.18
+      "n": 5,
+      "median_s": 22.02,
+      "min_s": 18.4,
+      "max_s": 36.7
     },
     {
       "werkzeug": "codeql",
       "teil": "frontend",
       "variante": "-",
       "messgroesse": "db_erstellen",
-      "n": 1,
-      "median_s": 10.62,
-      "min_s": 10.62,
-      "max_s": 10.62
+      "n": 5,
+      "median_s": 9.26,
+      "min_s": 6.74,
+      "max_s": 10.22
     },
     {
       "werkzeug": "codeql",
       "teil": "frontend",
       "variante": "-",
       "messgroesse": "gesamt",
-      "n": 1,
-      "median_s": 39.8,
-      "min_s": 39.8,
-      "max_s": 39.8
+      "n": 5,
+      "median_s": 31.28,
+      "min_s": 25.14,
+      "max_s": 45.26
     },
     {
       "werkzeug": "npm-audit",
       "teil": "backend",
       "variante": "mit",
       "messgroesse": "gesamt",
-      "n": 1,
-      "median_s": 22.14,
-      "min_s": 22.14,
-      "max_s": 22.14
+      "n": 5,
+      "median_s": 27.38,
+      "min_s": 25.73,
+      "max_s": 37.34
     },
     {
       "werkzeug": "npm-audit",
       "teil": "backend",
       "variante": "ohne",
       "messgroesse": "gesamt",
-      "n": 1,
-      "median_s": 1.57,
-      "min_s": 1.57,
-      "max_s": 1.57
+      "n": 5,
+      "median_s": 2.07,
+      "min_s": 1.49,
+      "max_s": 3.33
     },
     {
       "werkzeug": "npm-audit",
       "teil": "frontend",
       "variante": "mit",
       "messgroesse": "gesamt",
-      "n": 1,
-      "median_s": 37.8,
-      "min_s": 37.8,
-      "max_s": 37.8
+      "n": 5,
+      "median_s": 28.15,
+      "min_s": 26.7,
+      "max_s": 38.76
     },
     {
       "werkzeug": "npm-audit",
       "teil": "frontend",
       "variante": "ohne",
       "messgroesse": "gesamt",
-      "n": 1,
-      "median_s": 1.87,
-      "min_s": 1.87,
-      "max_s": 1.87
+      "n": 5,
+      "median_s": 3.02,
+      "min_s": 2.75,
+      "max_s": 3.08
     },
     {
       "werkzeug": "semgrep",
       "teil": "backend",
       "variante": "-",
       "messgroesse": "gesamt",
-      "n": 1,
-      "median_s": 6.72,
-      "min_s": 6.72,
-      "max_s": 6.72
+      "n": 5,
+      "median_s": 4.65,
+      "min_s": 3.92,
+      "max_s": 5.93
     },
     {
       "werkzeug": "semgrep",
       "teil": "frontend",
       "variante": "-",
       "messgroesse": "gesamt",
-      "n": 1,
-      "median_s": 3.99,
-      "min_s": 3.99,
-      "max_s": 3.99
+      "n": 5,
+      "median_s": 4.77,
+      "min_s": 3.5,
+      "max_s": 5.32
     },
     {
       "werkzeug": "trivy",
       "teil": "backend",
       "variante": "mit",
       "messgroesse": "db_download",
-      "n": 1,
-      "median_s": 5.24,
-      "min_s": 5.24,
-      "max_s": 5.24
+      "n": 5,
+      "median_s": 4.3,
+      "min_s": 4.05,
+      "max_s": 4.91
     },
     {
       "werkzeug": "trivy",
       "teil": "backend",
       "variante": "mit",
       "messgroesse": "gesamt",
-      "n": 1,
-      "median_s": 0.26,
-      "min_s": 0.26,
-      "max_s": 0.26
+      "n": 5,
+      "median_s": 0.12,
+      "min_s": 0.11,
+      "max_s": 0.23
     },
     {
       "werkzeug": "trivy",
       "teil": "backend",
       "variante": "mit",
       "messgroesse": "scan",
-      "n": 1,
-      "median_s": 0.26,
-      "min_s": 0.26,
-      "max_s": 0.26
+      "n": 5,
+      "median_s": 0.12,
+      "min_s": 0.11,
+      "max_s": 0.23
     },
     {
       "werkzeug": "trivy",
       "teil": "backend",
       "variante": "ohne",
       "messgroesse": "db_download",
-      "n": 1,
-      "median_s": 5.2,
-      "min_s": 5.2,
-      "max_s": 5.2
+      "n": 5,
+      "median_s": 4.35,
+      "min_s": 4.19,
+      "max_s": 5.39
     },
     {
       "werkzeug": "trivy",
       "teil": "backend",
       "variante": "ohne",
       "messgroesse": "gesamt",
-      "n": 1,
-      "median_s": 0.15,
-      "min_s": 0.15,
-      "max_s": 0.15
+      "n": 5,
+      "median_s": 0.1,
+      "min_s": 0.09,
+      "max_s": 0.17
     },
     {
       "werkzeug": "trivy",
       "teil": "backend",
       "variante": "ohne",
       "messgroesse": "scan",
-      "n": 1,
-      "median_s": 0.15,
-      "min_s": 0.15,
-      "max_s": 0.15
+      "n": 5,
+      "median_s": 0.1,
+      "min_s": 0.09,
+      "max_s": 0.17
     },
     {
       "werkzeug": "trivy",
       "teil": "frontend",
       "variante": "mit",
       "messgroesse": "db_download",
-      "n": 1,
-      "median_s": 6.93,
-      "min_s": 6.93,
-      "max_s": 6.93
+      "n": 5,
+      "median_s": 5.17,
+      "min_s": 4.26,
+      "max_s": 6.7
     },
     {
       "werkzeug": "trivy",
       "teil": "frontend",
       "variante": "mit",
       "messgroesse": "gesamt",
-      "n": 1,
-      "median_s": 0.15,
-      "min_s": 0.15,
-      "max_s": 0.15
-    },
-    {
-      "werkzeug": "trivy",
-      "teil": "frontend",
-      "variante": "mit",
-      "messgroesse": "scan",
-      "n": 1,
-      "median_s": 0.15,
-      "min_s": 0.15,
-      "max_s": 0.15
-    },
-    {
-      "werkzeug": "trivy",
-      "teil": "frontend",
-      "variante": "ohne",
-      "messgroesse": "db_download",
-      "n": 1,
-      "median_s": 4.1,
-      "min_s": 4.1,
-      "max_s": 4.1
-    },
-    {
-      "werkzeug": "trivy",
-      "teil": "frontend",
-      "variante": "ohne",
-      "messgroesse": "gesamt",
-      "n": 1,
-      "median_s": 0.08,
+      "n": 5,
+      "median_s": 0.13,
       "min_s": 0.08,
-      "max_s": 0.08
+      "max_s": 0.24
+    },
+    {
+      "werkzeug": "trivy",
+      "teil": "frontend",
+      "variante": "mit",
+      "messgroesse": "scan",
+      "n": 5,
+      "median_s": 0.13,
+      "min_s": 0.08,
+      "max_s": 0.24
+    },
+    {
+      "werkzeug": "trivy",
+      "teil": "frontend",
+      "variante": "ohne",
+      "messgroesse": "db_download",
+      "n": 5,
+      "median_s": 4.47,
+      "min_s": 4.13,
+      "max_s": 5.97
+    },
+    {
+      "werkzeug": "trivy",
+      "teil": "frontend",
+      "variante": "ohne",
+      "messgroesse": "gesamt",
+      "n": 5,
+      "median_s": 0.11,
+      "min_s": 0.08,
+      "max_s": 0.18
     },
     {
       "werkzeug": "trivy",
       "teil": "frontend",
       "variante": "ohne",
       "messgroesse": "scan",
-      "n": 1,
-      "median_s": 0.08,
+      "n": 5,
+      "median_s": 0.11,
       "min_s": 0.08,
-      "max_s": 0.08
+      "max_s": 0.18
     }
   ],
   "ueberschneidung": [
@@ -514,109 +514,109 @@
       "werkzeug": "codeql",
       "teil": "backend",
       "variante": "-",
-      "laeufe": 1,
+      "laeufe": 5,
       "identisch": "ja",
       "abweichende_laeufe": "",
-      "befunde_je_lauf": "87"
+      "befunde_je_lauf": "87 87 87 87 87"
     },
     {
       "werkzeug": "codeql",
       "teil": "frontend",
       "variante": "-",
-      "laeufe": 1,
+      "laeufe": 5,
       "identisch": "ja",
       "abweichende_laeufe": "",
-      "befunde_je_lauf": "0"
+      "befunde_je_lauf": "0 0 0 0 0"
     },
     {
       "werkzeug": "npm-audit",
       "teil": "backend",
       "variante": "mit",
-      "laeufe": 1,
+      "laeufe": 5,
       "identisch": "ja",
       "abweichende_laeufe": "",
-      "befunde_je_lauf": "41"
+      "befunde_je_lauf": "35 35 35 35 35"
     },
     {
       "werkzeug": "npm-audit",
       "teil": "backend",
       "variante": "ohne",
-      "laeufe": 1,
+      "laeufe": 5,
       "identisch": "ja",
       "abweichende_laeufe": "",
-      "befunde_je_lauf": "36"
+      "befunde_je_lauf": "33 33 33 33 33"
     },
     {
       "werkzeug": "npm-audit",
       "teil": "frontend",
       "variante": "mit",
-      "laeufe": 1,
+      "laeufe": 5,
       "identisch": "ja",
       "abweichende_laeufe": "",
-      "befunde_je_lauf": "1"
+      "befunde_je_lauf": "1 1 1 1 1"
     },
     {
       "werkzeug": "npm-audit",
       "teil": "frontend",
       "variante": "ohne",
-      "laeufe": 1,
+      "laeufe": 5,
       "identisch": "ja",
       "abweichende_laeufe": "",
-      "befunde_je_lauf": "1"
+      "befunde_je_lauf": "1 1 1 1 1"
     },
     {
       "werkzeug": "semgrep",
       "teil": "backend",
       "variante": "-",
-      "laeufe": 1,
+      "laeufe": 5,
       "identisch": "ja",
       "abweichende_laeufe": "",
-      "befunde_je_lauf": "24"
+      "befunde_je_lauf": "24 24 24 24 24"
     },
     {
       "werkzeug": "semgrep",
       "teil": "frontend",
       "variante": "-",
-      "laeufe": 1,
+      "laeufe": 5,
       "identisch": "ja",
       "abweichende_laeufe": "",
-      "befunde_je_lauf": "1"
+      "befunde_je_lauf": "1 1 1 1 1"
     },
     {
       "werkzeug": "trivy",
       "teil": "backend",
       "variante": "mit",
-      "laeufe": 1,
+      "laeufe": 5,
       "identisch": "ja",
       "abweichende_laeufe": "",
-      "befunde_je_lauf": "38"
+      "befunde_je_lauf": "38 38 38 38 38"
     },
     {
       "werkzeug": "trivy",
       "teil": "backend",
       "variante": "ohne",
-      "laeufe": 1,
+      "laeufe": 5,
       "identisch": "ja",
       "abweichende_laeufe": "",
-      "befunde_je_lauf": "36"
+      "befunde_je_lauf": "36 36 36 36 36"
     },
     {
       "werkzeug": "trivy",
       "teil": "frontend",
       "variante": "mit",
-      "laeufe": 1,
+      "laeufe": 5,
       "identisch": "ja",
       "abweichende_laeufe": "",
-      "befunde_je_lauf": "1"
+      "befunde_je_lauf": "1 1 1 1 1"
     },
     {
       "werkzeug": "trivy",
       "teil": "frontend",
       "variante": "ohne",
-      "laeufe": 1,
+      "laeufe": 5,
       "identisch": "ja",
       "abweichende_laeufe": "",
-      "befunde_je_lauf": "1"
+      "befunde_je_lauf": "1 1 1 1 1"
     }
   ]
 }

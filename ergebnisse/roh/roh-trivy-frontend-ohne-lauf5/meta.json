@@ -1,0 +1,8 @@
+{
+  "werkzeug": "trivy",
+  "teil": "frontend",
+  "variante": "ohne",
+  "lauf": 5,
+  "runner": "ubuntu24 20261111.370.1",
+  "status": "success"
+}

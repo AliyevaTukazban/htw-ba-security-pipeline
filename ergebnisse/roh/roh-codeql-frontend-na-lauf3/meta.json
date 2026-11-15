@@ -1,0 +1,8 @@
+{
+  "werkzeug": "codeql",
+  "teil": "frontend",
+  "variante": "-",
+  "lauf": 3,
+  "runner": "ubuntu24 20261111.370.1",
+  "status": "success"
+}

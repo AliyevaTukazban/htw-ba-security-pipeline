@@ -3,6 +3,6 @@
   "teil": "backend",
   "variante": "mit",
   "lauf": 1,
-  "runner": "ubuntu24 20261111.370.1",
+  "runner": "ubuntu24 20261111.127.1",
   "status": "success"
 }

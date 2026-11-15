@@ -57,12 +57,12 @@ routes/changePassword.ts;17;js/sensitive-get-query;medium;[Route handler](1) for
 routes/fileServer.ts;32;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;a1971e5832ca;;FP;;;;
 routes/keyServer.ts;14;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;d839a20ff7b0;;FP;;;;
 routes/logfileServer.ts;14;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;9c32bbc69f0d;;FP;;;;
-routes/profileImageUrlUpload.ts;29;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;4ddc479c2241;;FP;;;;
 routes/quarantineServer.ts;14;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;795d8e1d24ae;;FP;;;;
-routes/vulnCodeSnippet.ts;89;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;9635a600bce5;;FP;;;;
-routes/vulnCodeSnippet.ts;90;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;a095de757d30;;FP;;;;
+routes/profileImageUrlUpload.ts;29;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;4ddc479c2241;;FP;;;;
 routes/vulnCodeFixes.ts;82;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;55dca977a247;;FP;;;;
 routes/vulnCodeFixes.ts;83;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;b3a804467ab2;;FP;;;;
+routes/vulnCodeSnippet.ts;89;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;9635a600bce5;;FP;;;;
+routes/vulnCodeSnippet.ts;90;js/path-injection;high;This path depends on a [user-provided value](1).;codeql;backend;-;a095de757d30;;FP;;;;
 lib/insecurity.ts;136;js/type-confusion-through-parameter-tampering;critical;Potential type confusion as [this HTTP request parameter](1) may be either an array or a string.;codeql;backend;-;d9889151a4df;redirectChallenge;TP;;;;
 routes/search.ts;22;js/type-confusion-through-parameter-tampering;critical;Potential type confusion as [this HTTP request parameter](1) may be either an array or a string.;codeql;backend;-;5e06c7c3cc7e;unionSqlInjectionChallenge dbSchemaChallenge;TP;;;;
 routes/profileImageUrlUpload.ts;24;js/request-forgery;critical;The [URL](1) of this request depends on a [user-provided value](2).;codeql;backend;-;01709bdce4f1;;FP;;;;
@@ -150,15 +150,9 @@ A property name to write to depends on a [user-provided value](3).";codeql;backe
 ;;GHSA-4xc9-xhrj-v574;high;Prototype Pollution in lodash;npm-audit;backend;mit;903a75a2f08f;GHSA-4xc9-xhrj-v574;TP;lodash;2.4.2;GHSA-4xc9-xhrj-v574;False
 ;;GHSA-jf85-cpcp-j695;critical;Prototype Pollution in lodash;npm-audit;backend;mit;a63dc7b70e84;GHSA-jf85-cpcp-j695;TP;lodash;2.4.2;GHSA-jf85-cpcp-j695;False
 ;;GHSA-5mrr-rgp6-x4gr;critical;Command Injection in marsdb;npm-audit;backend;mit;52f9a3b310c8;GHSA-5mrr-rgp6-x4gr;TP;marsdb;0.6.11;GHSA-5mrr-rgp6-x4gr;False
-;;GHSA-3ppc-4f35-3m26;high;minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern;npm-audit;backend;mit;8a7c72b674b4;;FP;minimatch;10.2.6;GHSA-3ppc-4f35-3m26;True
 ;;GHSA-3ppc-4f35-3m26;high;minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern;npm-audit;backend;mit;fa9278a83f18;GHSA-3ppc-4f35-3m26;TP;minimatch;3.0.5;GHSA-3ppc-4f35-3m26;False
-;;GHSA-3ppc-4f35-3m26;high;minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern;npm-audit;backend;mit;3ef4c53d1f19;;FP;minimatch;9.0.9;GHSA-3ppc-4f35-3m26;False
-;;GHSA-7r86-cg39-jmmj;high;minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments;npm-audit;backend;mit;f537f1c7e7a5;;FP;minimatch;10.2.6;GHSA-7r86-cg39-jmmj;True
 ;;GHSA-7r86-cg39-jmmj;high;minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments;npm-audit;backend;mit;8e5dcc129af4;GHSA-7r86-cg39-jmmj;TP;minimatch;3.0.5;GHSA-7r86-cg39-jmmj;False
-;;GHSA-7r86-cg39-jmmj;high;minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments;npm-audit;backend;mit;5596bfd5f5d9;;FP;minimatch;9.0.9;GHSA-7r86-cg39-jmmj;False
-;;GHSA-23c5-xmqv-rm74;high;minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions;npm-audit;backend;mit;c9c74ec68cda;;FP;minimatch;10.2.6;GHSA-23c5-xmqv-rm74;True
 ;;GHSA-23c5-xmqv-rm74;high;minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions;npm-audit;backend;mit;d711b7ac67b0;GHSA-23c5-xmqv-rm74;TP;minimatch;3.0.5;GHSA-23c5-xmqv-rm74;False
-;;GHSA-23c5-xmqv-rm74;high;minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions;npm-audit;backend;mit;2160adf3cdef;;FP;minimatch;9.0.9;GHSA-23c5-xmqv-rm74;False
 ;;GHSA-446m-mv8f-q348;high;Regular Expression Denial of Service in moment;npm-audit;backend;mit;a6be1693959c;GHSA-446m-mv8f-q348;TP;moment;2.0.0;GHSA-446m-mv8f-q348;False
 ;;GHSA-8hfj-j24r-96c4;high;Path Traversal: 'dir/../../filename' in moment.locale;npm-audit;backend;mit;8ec7e9dd4ca9;GHSA-8hfj-j24r-96c4;TP;moment;2.0.0;GHSA-8hfj-j24r-96c4;False
 ;;GHSA-cgfm-xwp7-2cvr;high;Sanitize-html Vulnerable To REDoS Attacks;npm-audit;backend;mit;78d595bfe605;GHSA-cgfm-xwp7-2cvr;TP;sanitize-html;1.4.2;GHSA-cgfm-xwp7-2cvr;False
@@ -190,11 +184,8 @@ A property name to write to depends on a [user-provided value](3).";codeql;backe
 ;;GHSA-jf85-cpcp-j695;critical;Prototype Pollution in lodash;npm-audit;backend;ohne;14b95a625226;GHSA-jf85-cpcp-j695;TP;lodash;2.4.2;GHSA-jf85-cpcp-j695;False
 ;;GHSA-5mrr-rgp6-x4gr;critical;Command Injection in marsdb;npm-audit;backend;ohne;6a8618b54ce4;GHSA-5mrr-rgp6-x4gr;TP;marsdb;0.6.11;GHSA-5mrr-rgp6-x4gr;False
 ;;GHSA-3ppc-4f35-3m26;high;minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern;npm-audit;backend;ohne;a0404b9af7b8;GHSA-3ppc-4f35-3m26;TP;minimatch;3.0.5;GHSA-3ppc-4f35-3m26;False
-;;GHSA-3ppc-4f35-3m26;high;minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern;npm-audit;backend;ohne;d411fe9d465a;;FP;minimatch;9.0.9;GHSA-3ppc-4f35-3m26;False
 ;;GHSA-7r86-cg39-jmmj;high;minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments;npm-audit;backend;ohne;72e326665ee4;GHSA-7r86-cg39-jmmj;TP;minimatch;3.0.5;GHSA-7r86-cg39-jmmj;False
-;;GHSA-7r86-cg39-jmmj;high;minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments;npm-audit;backend;ohne;2e51d81d29be;;FP;minimatch;9.0.9;GHSA-7r86-cg39-jmmj;False
 ;;GHSA-23c5-xmqv-rm74;high;minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions;npm-audit;backend;ohne;61d18c590091;GHSA-23c5-xmqv-rm74;TP;minimatch;3.0.5;GHSA-23c5-xmqv-rm74;False
-;;GHSA-23c5-xmqv-rm74;high;minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions;npm-audit;backend;ohne;d761dd4cb352;;FP;minimatch;9.0.9;GHSA-23c5-xmqv-rm74;False
 ;;GHSA-446m-mv8f-q348;high;Regular Expression Denial of Service in moment;npm-audit;backend;ohne;8729c0327df1;GHSA-446m-mv8f-q348;TP;moment;2.0.0;GHSA-446m-mv8f-q348;False
 ;;GHSA-8hfj-j24r-96c4;high;Path Traversal: 'dir/../../filename' in moment.locale;npm-audit;backend;ohne;4a86b7136e80;GHSA-8hfj-j24r-96c4;TP;moment;2.0.0;GHSA-8hfj-j24r-96c4;False
 ;;GHSA-cgfm-xwp7-2cvr;high;Sanitize-html Vulnerable To REDoS Attacks;npm-audit;backend;ohne;e059b60c495e;GHSA-cgfm-xwp7-2cvr;TP;sanitize-html;1.4.2;GHSA-cgfm-xwp7-2cvr;False

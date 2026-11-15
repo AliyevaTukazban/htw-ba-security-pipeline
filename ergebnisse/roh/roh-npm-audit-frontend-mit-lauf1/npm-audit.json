@@ -9,19 +9,12 @@
         "@angular-eslint/utils",
         "@typescript-eslint/utils"
       ],
-      "effects": [
-        "@angular-eslint/schematics",
-        "angular-eslint"
-      ],
+      "effects": [],
       "range": ">=17.1.2-alpha.0",
       "nodes": [
         "node_modules/@angular-eslint/eslint-plugin"
       ],
-      "fixAvailable": {
-        "name": "angular-eslint",
-        "version": "18.4.2",
-        "isSemVerMajor": true
-      }
+      "fixAvailable": true
     },
     "@angular-eslint/eslint-plugin-template": {
       "name": "@angular-eslint/eslint-plugin-template",
@@ -31,12 +24,19 @@
         "@angular-eslint/utils",
         "@typescript-eslint/utils"
       ],
-      "effects": [],
+      "effects": [
+        "@angular-eslint/schematics",
+        "angular-eslint"
+      ],
       "range": ">=17.1.2-alpha.0",
       "nodes": [
         "node_modules/@angular-eslint/eslint-plugin-template"
       ],
-      "fixAvailable": true
+      "fixAvailable": {
+        "name": "angular-eslint",
+        "version": "18.4.2",
+        "isSemVerMajor": true
+      }
     },
     "@angular-eslint/schematics": {
       "name": "@angular-eslint/schematics",
@@ -185,9 +185,7 @@
         "@ethersproject/transactions",
         "@ethersproject/wordlists"
       ],
-      "effects": [
-        "@ethersproject/json-wallets"
-      ],
+      "effects": [],
       "range": "*",
       "nodes": [
         "node_modules/@ethersproject/hdnode"
@@ -267,6 +265,7 @@
       "effects": [
         "@ethersproject/abstract-provider",
         "@ethersproject/contracts",
+        "@ethersproject/json-wallets",
         "@ethersproject/providers"
       ],
       "range": "<=5.8.0",
@@ -366,7 +365,9 @@
         "@typescript-eslint/typescript-estree",
         "@typescript-eslint/utils"
       ],
-      "effects": [],
+      "effects": [
+        "@typescript-eslint/eslint-plugin"
+      ],
       "range": "6.16.0 - 8.72.2",
       "nodes": [
         "node_modules/@typescript-eslint/type-utils"
@@ -407,7 +408,6 @@
         "@angular-eslint/eslint-plugin",
         "@angular-eslint/eslint-plugin-template",
         "@angular-eslint/utils",
-        "@typescript-eslint/eslint-plugin",
         "angular-eslint",
         "typescript-eslint"
       ],
